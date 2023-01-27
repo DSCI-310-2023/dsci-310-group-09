@@ -2,7 +2,7 @@
 
 DSCI 310 Group Contract (Group 9)  
 
-**Goals:  
+**Goals: **
 - Be able to create a reproducible GitHub repo  
 - Create trustworthy and reproducible workflows that allow for easy collaboration.  
 - Produce a great reproducible project with the skills learned in class 
