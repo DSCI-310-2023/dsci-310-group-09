@@ -1,6 +1,6 @@
 # dsci-310-group-09
 
-DSCI 310 Group Contract (Group 9)  
+## Teamwork Contract
 
 Goals: 
 - Be able to create a reproducible GitHub repo  
