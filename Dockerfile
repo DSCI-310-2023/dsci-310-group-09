@@ -1,0 +1,1 @@
+FROM ubcdsci/jupyterlab:v6.5.2
