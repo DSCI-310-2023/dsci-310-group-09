@@ -1,4 +1,4 @@
-# Projct Title
+# Project Title
 
 Authors: Vera Danilova, Jenna Le Noble, Moira Renata, Yuyang Wang
 
