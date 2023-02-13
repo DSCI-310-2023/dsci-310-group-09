@@ -13,6 +13,7 @@ Authors: Vera Danilova, Jenna Le Noble, Moira Renata, Yuyang Wang
 ## License 
 
 DSCI310 Project © 2023 by GRUOP 9 is licensed under Attribution 4.0 International 
+
 If You Share the Licensed Material, You must:
 
 retain the following if it is supplied by the Licensor with the Licensed Material:
