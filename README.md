@@ -15,15 +15,9 @@ Authors: Vera Danilova, Jenna Le Noble, Moira Renata, Yuyang Wang
 DSCI310 Project © 2023 by GRUOP 9 is licensed under Attribution 4.0 International 
 
 
-If You Share the Licensed Material, You must:
+Copyright <2023><Yuyang Wang, Moira Renata, Jenna Le Noble, Vera Danilova>
 
-retain the following if it is supplied by the Licensor with the Licensed Material:
-identification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);
-a copyright notice;
-a notice that refers to this Public License;
-a notice that refers to the disclaimer of warranties;
-a URI or hyperlink to the Licensed Material to the extent reasonably practicable;
-indicate if You modified the Licensed Material and retain an indication of any previous modifications; and
-indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.
-For the avoidance of doubt, You do not have permission under this Public License to Share Adapted Material.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
