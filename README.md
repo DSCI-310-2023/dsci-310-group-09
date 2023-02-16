@@ -10,6 +10,8 @@ The data we used to build was gathered in 2017 and 2018 in Seoul, Korea. The dat
 
 ## Report 
 
+The analysis report can be found here: https://github.com/jennalenoble/dsci-310-group-09/blob/main/bike_share_analysis.ipynb
+
 ## Usage
 
 ## Dependencies
