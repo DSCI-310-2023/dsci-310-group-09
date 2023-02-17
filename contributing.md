@@ -1,6 +1,8 @@
 # Contributing to the DSCI 310 Project
 
-This outlines how to propose a change to the DSCI 310 project. 
+Thank you for contributing to our project! 
+
+This document outlines how to propose a change to the DSCI 310 project. 
 
 ### Fixing typos
 
