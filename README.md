@@ -18,7 +18,7 @@ The analysis report can be found [here](https://github.com/jennalenoble/dsci-310
 
 ## Usage
 
-We use a Docker container image to make the computational environment for this project reproducible. We provide two different way to do this. The first way is useful for those wishing to reproduce our results. This will reproducibly execute the project non-interactively. The second way is useful for project developers and collaborators. It will interactively run, edit and explore the project in Jupyter Lab.
+We use a Docker container image to make the computational environment for this project reproducible and demonstrate two different ways to do this.
 
 **1. How to reproducibly execute the project non-interactively**
 
@@ -34,19 +34,21 @@ First, clone this GitHub repository and in in the terminal, navigate to the root
 
 To interactively run Jupyter lab inside the ubcdsci/predict-airbnb Docker container (which is useful for project developers and collaborators):
 
-* in terminal, navigate to the root of this project repository
+* In terminal, navigate to the root of this project repository
 
-* type the following in terminal:
+* Type the following in terminal:
 
   `docker-compose up -d`
   
-* once the container has launched, users need to copy the URL that looks like `http://127.0.0.1:8888/lab?token=d9704724bf0267d3d9262698ffbb88123633f8c8f4b1a305` into their web browser to access Jupyter Lab
+* Once the container has launched, users need to copy the URL that looks like `http://127.0.0.1:8888/lab?token=d9704724bf0267d3d9262698ffbb88123633f8c8f4b1a305` into their web browser to access Jupyter Lab
 
 * Next, in Jupyter lab, navigate to, and open `analysis/bike_share_analysis.ipynb` and click **Kernel** > **Restart and runall** to run the entire analysis.
 
 * When done working, type docker-compose down to remove the dangling container.
  
 ## Dependencies
+
+JupyterLab version 0.1.0
 
 R version 4.2.2
 
