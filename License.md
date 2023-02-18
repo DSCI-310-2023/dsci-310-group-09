@@ -1,6 +1,6 @@
 ## Project
 
-DSCI310 Project © 2023 by GRUOP 9 is licensed under the Attribution 4.0 International ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
+DSCI310 Project © 2023 by GROUP 9 is licensed under the Attribution 4.0 International ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
 
 Copyright <2023><Yuyang Wang, Moira Renata, Jenna Le Noble, Vera Danilova>
 
