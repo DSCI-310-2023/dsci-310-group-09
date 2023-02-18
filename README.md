@@ -4,7 +4,7 @@ Authors: Enoch Hsu, Jenna Le Noble, Sarah Mohammed, Nadine Tabbaa
 
 Contributors: Vera Danilova, Jenna Le Noble, Moira Renata, Yuyang Wang
 
-Note: This analysis was originally created by Enoch Hsu, Jenna Le Noble, Sarah Mohammed and Nadine Tabbaa for DSCI 100 in 2022. Refer [here](https://github.com/jennalenoble/dsci-310-group-09/blob/main/consent/consent.jpg) for the consent from each author to use this analysis for our project.
+*Note*: This analysis was originally created by Enoch Hsu, Jenna Le Noble, Sarah Mohammed and Nadine Tabbaa for DSCI 100 in 2022. Refer [here](https://github.com/jennalenoble/dsci-310-group-09/blob/main/consent/consent.jpg) for the consent from each author to use this analysis for our project.
 
 ## Summary
 
@@ -18,9 +18,42 @@ The analysis report can be found [here](https://github.com/jennalenoble/dsci-310
 
 ## Usage
 
+We use a Docker container image to make the computational environment for this project reproducible. We provide two different way to do this. The first way is useful for those wishing to reproduce our results. This will reproducibly execute the project non-interactively. The second way is useful for project developers and collaborators. It will interactively run, edit and explore the project in Jupyter Lab.
+
+**1. How to reproducibly execute the project non-interactively**
+
+First, clone this GitHub repository and in in the terminal, navigate to the root of this project. Next run the following in your terminal:
+
+`docker run --rm \
+  -p 8888:8888 \
+  -v /$(pwd):/opt/analysis/bike_share_anaylsis \
+  jennalenoble/dsci-310-group-09:v0.1.0 \
+  jupyter nbconvert --to notebook --execute dsci-310-group-09/analysis/bike_share_analysis.ipynb`
+  
+**2. How to interactively run and explore the project in Jupyter Lab**
+
+To interactively run Jupyter lab inside the ubcdsci/predict-airbnb Docker container (which is useful for project developers and collaborators):
+
+* in terminal, navigate to the root of this project repository
+
+* type the following in terminal:
+
+  `docker-compose up -d`
+  
+* once the container has launched, users need to copy the URL that looks like `http://127.0.0.1:8888/lab?token=d9704724bf0267d3d9262698ffbb88123633f8c8f4b1a305` into their web browser to access Jupyter Lab
+
+* Next, in Jupyter lab, navigate to, and open `analysis/bike_share_analysis.ipynb` and click **Kernel** > **Restart and runall** to run the entire analysis.
+
+* When done working, type docker-compose down to remove the dangling container.
+ 
 ## Dependencies
 
-R version 4.2.2, Jupyter and R packages listed in [environment.yml](https://github.com/jennalenoble/dsci-310-group-09/blob/main/environment.yml).
+R version 4.2.2
+
+R-packages: 
+* tidyverse 1.3.2
+* tidymodels 1.0.0
+* GGally 2.1.2
 
 ## License 
 
