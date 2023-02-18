@@ -1,9 +1,12 @@
 name: Docker Image CI
 
 on:
+  workflow_dispatch: 
   push:
     branches: [ "main" ]
-  
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
 
   build:
@@ -13,4 +16,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag yuwangy/dsci-310-group-09
+      run: docker build . --file Dockerfile --tag jennalenoble/dsci-310-group-09:latest
+      
+    - name: Log in to Docker Hub
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        
+    - name: Docker push
+      run: docker push jennalenoble/dsci-310-group-09:latest
