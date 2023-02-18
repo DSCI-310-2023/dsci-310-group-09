@@ -24,7 +24,7 @@ We use a Docker container image to make the computational environment for this p
 
 First, clone this GitHub repository and in in the terminal, navigate to the root of this project. Next run the following in your terminal:
 
-``
+```
   docker run --rm \
   
   -p 8888:8888 \
@@ -34,7 +34,7 @@ First, clone this GitHub repository and in in the terminal, navigate to the root
   jennalenoble/dsci-310-group-09:v0.1.0 \
   
   jupyter nbconvert --to notebook --execute dsci-310-group-09/analysis/bike_share_analysis.ipynb
-``
+```
   
 **2. How to interactively run and explore the project in Jupyter Lab**
 
