@@ -26,25 +26,21 @@ First, clone this GitHub repository and in in the terminal, navigate to the root
 
 ```
   docker run --rm \
-  
   -p 8888:8888 \
-  
   -v /$(pwd):/opt/analysis/bike_share_anaylsis \
-  
   jennalenoble/dsci-310-group-09:v0.1.0 \
-  
   jupyter nbconvert --to notebook --execute dsci-310-group-09/analysis/bike_share_analysis.ipynb
 ```
   
 **2. How to interactively run and explore the project in Jupyter Lab**
 
-To interactively run Jupyter lab inside the ubcdsci/predict-airbnb Docker container (which is useful for project developers and collaborators):
+To interactively run Jupyter lab inside the `jennalenoble/dsci-310-group-09` Docker container (which is useful for project developers and collaborators):
 
 * In terminal, navigate to the root of this project repository
 
 * Type the following in terminal:
 
-  `docker-compose up -d`
+  ```docker-compose up -d```
   
 * Once the container has launched, users need to copy the URL that looks like `http://127.0.0.1:8888/lab?token=d9704724bf0267d3d9262698ffbb88123633f8c8f4b1a305` into their web browser to access Jupyter Lab
 
