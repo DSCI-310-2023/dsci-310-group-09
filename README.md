@@ -24,5 +24,5 @@ R version 4.2.2, Jupyter and R packages listed in [environment.yml](https://gith
 
 ## License 
 
-DSCI310 Project © 2023 by GROUP 9 is licensed under Attribution 4.0 International. Refer to the [license file](https://github.com/jennalenoble/dsci-310-group-09/blob/main/License.md) for more information.
+This project is offered under the [Attribution 4.0 International (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/). The software provided in this project is offered under the [MIT open source license](https://opensource.org/license/mit/). Refer to the [license file](https://github.com/jennalenoble/dsci-310-group-09/blob/main/License.md) for more information.
 
