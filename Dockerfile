@@ -1,6 +1,4 @@
-FROM ubcdsci/jupyterlab:v6.5.2
+FROM jupyter/r-notebook
 
-# Install R packages with specific versions from conda-forge
-# Packages and versions specified in environment.yml
-COPY environment.yml .
-RUN conda env update --file environment.yml
+RUN conda install --yes -c conda-forge r-tidyverse=1.3.2 
+RUN conda install --yes -c conda-forge r-tidymodels=1.0.0
