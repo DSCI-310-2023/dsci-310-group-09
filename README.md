@@ -18,9 +18,9 @@ The analysis report can be found [here](https://github.com/jennalenoble/dsci-310
 
 ## Usage
 
-We use a Docker container image to make the computational environment for this project reproducible. Follow the steps below to interactively run and explore the project in Jupyter Lab
+We use a Docker container image to make the computational environment for this project reproducible. Follow the steps below to interactively run and explore the project in Jupyter Lab:
 
-* First, clone this GitHub repository and in in the terminal, navigate to the root of this project
+* First, clone this GitHub repository and in the terminal, navigate to the root of this project
 * Run the command in your terminal:
 ```docker run -p 8888:8888 --rm -v /$(pwd):/home/jovyan/work/project jennalenoble/dsci-310-09```
 * Copy the URL that looks like `http://127.0.0.1:8888/lab?token=d9704724bf0267d3d9262698ffbb88123633f8c8f4b1a305` into your web browser to access Jupyter Lab
@@ -28,8 +28,6 @@ We use a Docker container image to make the computational environment for this p
 
  
 ## Dependencies
-
-JupyterLab version 0.1.0
 
 R version 4.2.2
 
