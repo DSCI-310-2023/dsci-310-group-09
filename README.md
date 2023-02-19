@@ -22,7 +22,7 @@ We use a Docker container image to make the computational environment for this p
 
 * First, clone this GitHub repository and in the terminal, navigate to the root of this project
 * Run the command in your terminal:
-```docker run -p 8888:8888 --rm -v /$(pwd):/home/jovyan/work/project jennalenoble/dsci-310-09```
+```docker run -p 8888:8888 --rm -v /$(pwd):/home/jovyan/work/project jennalenoble/dsci-310-group-09```
 * Copy the URL that looks like `http://127.0.0.1:8888/lab?token=d9704724bf0267d3d9262698ffbb88123633f8c8f4b1a305` into your web browser to access Jupyter Lab
 * Next, in Jupyter lab, navigate to, and open `analysis/bike_share_analysis.ipynb` and click **Kernel** > **Restart and runall** to run the entire analysis.
 
