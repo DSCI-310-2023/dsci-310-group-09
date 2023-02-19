@@ -1,6 +1,7 @@
 FROM jupyter/r-notebook
 
-RUN conda install --yes -c conda-forge r-tidyverse=1.3.2 
-RUN conda install --yes -c conda-forge r-tidymodels=1.0.0
-RUN conda install --yes -c conda-forge r-GGally=2.1.2
-RUN conda install --yes -c conda-forge r-kknn=1.3.1
+RUN Rscript -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))"
+RUN Rscript -e "remotes::install_version('tidyverse', version = '1.3.2', repos = 'https://cloud.r-project.org')"
+RUN Rscript -e "remotes::install_version('tidymodels', version = '1.0.0', repos = 'https://cloud.r-project.org')"
+RUN Rscript -e "remotes::install_version('GGally', version = '2.1.2', repos = 'https://cloud.r-project.org')"
+RUN Rscript -e "remotes::install_version('kknn', version = '1.3.1', repos= 'https://cloud.r-project.org')"
