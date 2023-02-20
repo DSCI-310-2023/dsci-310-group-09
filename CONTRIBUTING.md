@@ -18,7 +18,7 @@ Before you make a substantial pull request, you should always file an issue and
 make sure someone from the team agrees that it's a problem. If you've found a
 bug, create an associated issue and illustrate the bug with a minimal 
 [reprex](https://www.tidyverse.org/help/#reprex). Additionally, inform the team if you are facing issues or a bug
-with GitHub since someone in the team might know how to fix it or have experienced it before. 
+with GitHub since someone in the team might know how to fix it or have experienced it before. Lastly, make sure to leave meaningful commit messages when making changes and communicate through GitHub issues. 
 
 ### Pull request process
 
