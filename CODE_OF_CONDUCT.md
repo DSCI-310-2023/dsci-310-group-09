@@ -14,7 +14,7 @@ diverse, inclusive, and healthy environment.
 
 ## Our Standards
 
-Examples of behavior that contributes to a positive environment for our
+Examples of behavior contributing to a positive environment for our
 group include:
 
 * Demonstrating empathy and kindness toward other people
@@ -55,7 +55,7 @@ when an individual is officially representing the group in public spaces.
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
+Instances of abusive, harassing, or other acts of unacceptable behavior may be
 reported to the project TA. All complaints will be reviewed and investigated
 promptly and fairly.
 
@@ -74,28 +74,24 @@ unprofessional or unwelcome in the group.
 
 **Consequence**: A private, written warning from group members, providing
 clarity around the nature of the violation and an explanation of why the
-behavior was inappropriate. A public apology may be requested.
+behavior was inappropriate. An apology may be requested.
 
 ### 2. Warning
 
 **Community Impact**: A violation through a single incident or series of
 actions.
 
-**Consequence**: A warning with consequences for continued behavior. No
-interaction with the people involved, including unsolicited interaction with
-those enforcing the Code of Conduct, for a specified period of time. This
-includes avoiding interactions in group spaces as well as external channels
-like social media. Violating these terms may lead to a temporary or permanent
-removal from the group.
+**Consequence**: A warning with consequences for continued behavior. This will be 
+reported to the group TA and/or the DSCI 310 professor and a discussion will need to
+take place. 
 
 ### 3. Temporary Ban
 
 **Community Impact**: A serious violation of group standards, including
 sustained inappropriate behavior.
 
-**Consequence**: A temporary ban from any sort of interaction or public
-communication with the group for a specified period of time. No public or
-private interaction with the people involved, including unsolicited interaction
+**Consequence**: A temporary ban from the group for a specified period of time. 
+No public or private interaction with the people involved, including unsolicited interaction
 with those enforcing the Code of Conduct, is allowed during this period.
 Violating these terms may lead to a permanent removal from group.
 
@@ -105,7 +101,7 @@ Violating these terms may lead to a permanent removal from group.
 standards, including sustained inappropriate behavior, harassment of an
 individual, or aggression toward or disparagement of classes of individuals.
 
-**Consequence**: A permanent removal from any sort of group within the DSCI course.
+**Consequence**: A permanent removal from DSCI 310 Group 09. 
 
 ## Attribution
 
