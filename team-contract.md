@@ -28,4 +28,5 @@ Consequences:
 
 Meetings:
 - Meeting on Zoom
-- Friday Tutorial 9 - 10:30a.m
+- Friday Tutorial 9.00 - 10:30a.m
+- If Fridays don't work out, we will decide on a time through our group chat. 
