@@ -20,10 +20,10 @@ The analysis report can be found [here](https://github.com/jennalenoble/dsci-310
 
 We use a Docker container image to make the computational environment for this project reproducible. Follow the steps below to interactively run and explore the project in Jupyter Lab:
 
-* First, clone this GitHub repository and in the terminal, navigate to the root of this project
+* Clone this GitHub repository and in the terminal, navigate to the root of this project 
 * Run the command in your terminal:
-```docker run -p 8888:8888 --rm -v /$(pwd):/home/jovyan/work/project jennalenoble/dsci-310-group-09```
-* Copy the URL that looks like `http://127.0.0.1:8888/lab?token=d9704724bf0267d3d9262698ffbb88123633f8c8f4b1a305` into your web browser to access Jupyter Lab
+```docker run -p 8888:8888 --rm -v /$(pwd):/home/jovyan/work jennalenoble/dsci-310-group-09:latest```
+* Copy the URL from the terminal that looks like `http://127.0.0.1:8888/lab?token=d9704724bf0267d3d9262698ffbb88123633f8c8f4b1a305` into your web browser to access Jupyter Lab
 * Next, in Jupyter lab, navigate to, and open `analysis/bike_share_analysis.ipynb` and click **Kernel** > **Restart and runall** to run the entire analysis.
 
  
@@ -35,6 +35,7 @@ R-packages:
 * tidyverse 1.3.2
 * tidymodels 1.0.0
 * GGally 2.1.2
+* kknn 1.3.1
 
 ## License 
 
