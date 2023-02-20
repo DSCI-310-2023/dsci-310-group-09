@@ -1,13 +1,13 @@
 # Teamwork Contract
 
 Goals: 
-- Be able to create a reproducible GitHub repo  
+- Be able to create a reproducible project with Docker container 
 - Create trustworthy and reproducible workflows that allow for easy collaboration.  
 - Produce a great reproducible project with the skills learned in class 
 
 Skills we want to develop:	
 - Become proficient with Git
-- Understand how to navigate 
+- Understand how to navigate Github
 - Interpersonal skills through collaboration with team
 - Being able to pull requests and review teammates’ work, proofreading
 
