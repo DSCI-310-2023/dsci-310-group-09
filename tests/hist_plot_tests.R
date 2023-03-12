@@ -2,6 +2,7 @@ library(testthat)
 library(ggcheck)
 
 source("./R/hist_plot.R")
+source("./tests/hist_plot_tests_helper.R")
 
 #test for input variables
 test_that("Function can only accept certain data types for arguments", {
