@@ -6,4 +6,4 @@ RUN Rscript -e "remotes::install_version('tidymodels', version = '1.0.0', repos 
 RUN Rscript -e "remotes::install_version('GGally', version = '2.1.2', repos = 'https://cloud.r-project.org')"
 RUN Rscript -e "remotes::install_version('kknn', version = '1.3.1', repos = 'https://cloud.r-project.org')"
 RUN Rscript -e "remotes::install_version('testthat', version = '3.1.6', repos = 'https://cloud.r-project.org')"
-#RUN Rscript -e "remotes::install_github("rstudio/ggcheck")"
+RUN Rscript -e "remotes::install_github('rstudio/ggcheck')"
