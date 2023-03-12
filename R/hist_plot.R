@@ -1,4 +1,4 @@
-# Histogram Plot
+#' Histogram Plot
 
 #' Create a histogram for a given variable
 #' 
