@@ -34,7 +34,6 @@ bar_graph <- function(df, x_variable, y_variable, x_lab, y_lab, fill_lab, plot_t
       }
 }
 
-bar_iris <- bar_graph(iris, iris$Species, iris$Sepal.Width, "Species", "Sepal Width", "Species", "Iris Graph")
 
 
 
