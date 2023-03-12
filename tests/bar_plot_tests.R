@@ -1,6 +1,9 @@
 library(testthat)
 
-source("./R/hist_plot.R")
+source("../../R/bar_plot.R")
+
+#helper function 
+bar_iris <- bar_graph(iris, iris$Species, iris$Sepal.Width, "Species", "Sepal Width", "Species", "Iris Graph")
 
 
 #test for input variables
