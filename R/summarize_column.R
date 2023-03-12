@@ -16,8 +16,8 @@
 summarize_column <- function(data_frame, column) {
   if(!is.data.frame(data_frame)){
     stop("input data_frame needs to be a data frame or extension")
-  } else if(!is.character(column)) {
-    stop("input column needs to be a string")
+  } else if(!is.numeric(column)) {
+    stop("input column needs to be a numeric")
   } else if(nrow(data_frame) < 1) {
     return(data.frame(mean = numeric(0),
                       med = numeric(0),
@@ -31,6 +31,7 @@ summarize_column <- function(data_frame, column) {
     )
   }
 }
+
 
 
 
