@@ -21,7 +21,7 @@
 #'
 bar_graph <- function(df, x, y, xlab, ylab, fill_lab, title) {
   
-  if(!is.factor(x) | !is.character(x)) {
+  if(!is.factor(x)) {
     stop("Please pass me a discrete variable") 
     } else if (!is.numeric(y)) {
       stop("Please pass me a numerical variable") 
