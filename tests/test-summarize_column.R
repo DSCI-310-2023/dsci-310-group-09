@@ -15,10 +15,10 @@ mean, med, sd",{
 
 
 test_that("summarize_column calculates mean, med, sd correctly", {
-  expect_equivalent(summarize_column(mtcars,"mpg"), list(mean("mpg"),
+  expect_equivalent(summarize_column(mtcars,"mpg"), data.frame(mean("mpg"),
                                                       median("mpg"),
                                                       sd("mpg")))
-  expect_equivalent(summarize_column(mtcars,"hp"), list(mean("hp"),
+  expect_equivalent(summarize_column(mtcars,"hp"), data.frame(mean("hp"),
                                                         median("hp"),
                                                         sd("hp")))
 })
@@ -26,10 +26,10 @@ test_that("summarize_column calculates mean, med, sd correctly", {
 
 test_that("summarize_column returns an empty df, along with columns:mean,med,
 sd if input is an empty df", {
-  expect_equivalent(summarize_column(mtcars[FALSE,], "mpg"), list(mean = numeric(0),
+  expect_equivalent(summarize_column(mtcars[FALSE,], "mpg"), data.frame(mean = numeric(0),
                                                         med = numeric(0),
                                                         sd = numeric(0)))
-  expect_equivalent(summarize_column(mtcars[FALSE,], "qsec"), list(mean = numeric(0),
+  expect_equivalent(summarize_column(mtcars[FALSE,], "qsec"), data.frame(mean = numeric(0),
                                                                   med = numeric(0),
                                                                   sd = numeric(0)))
 })
