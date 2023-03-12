@@ -26,7 +26,7 @@ qsec_output <- data.frame(mean(qsec),
                          sd(qsec))
 
 
-qsec_output
+
 
 
 
