@@ -3,6 +3,7 @@ library(ggcheck)
 library(testthat)
 
 source("./R/scatter_plot.R")
+source("./tests/scatter_plot_tests_helper.R")
 
 #test for input variables
 test_that("Function can only accept certain data types for arguments", {

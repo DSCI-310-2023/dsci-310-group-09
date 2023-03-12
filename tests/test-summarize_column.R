@@ -1,7 +1,8 @@
 library(testthat)
 library("dplyr")
 
-source("~/dsci-310-group-09/R/summarize_column.R")
+source("./R/summarize_column.R")
+source("./tests/helper-summarize_column.R")
 
 test_that("summarize_column function returns a df or df extension", {
   expect_s3_class(summarize_column(mtcars, mpg), "data.frame")

@@ -1,10 +1,7 @@
 library(testthat)
 
-source("../../R/bar_plot.R")
-
-#helper function 
-bar_iris <- bar_graph(iris, iris$Species, iris$Sepal.Width, "Species", "Sepal Width", "Species", "Iris Graph")
-
+source("./R/bar_plot.R")
+source("./tests/bar_plot_tests_helper.R")
 
 #test for input variables
 test_that("Function can only accept certain data types for arguments", {
