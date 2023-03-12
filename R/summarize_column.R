@@ -24,12 +24,14 @@ summarize_column <- function(data_frame, column) {
                       sd = numeric(0)))
   } else {
     return (
-      summarize(mean = mean(column),
-                med = median(colum),
-                sd = sd(column))
+      data_frame |>
+        dplyr::summarize(mean = mean(column),
+                         med = median(column),
+                         sd = sd(column))
     )
   }
 }
+
 
 
 
