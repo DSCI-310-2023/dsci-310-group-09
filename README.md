@@ -1,7 +1,5 @@
 # Bike Share Analysis and Daily Users Predictor
 
-Authors: Enoch Hsu, Jenna Le Noble, Sarah Mohammed, Nadine Tabbaa
-
 Contributors: Vera Danilova, Jenna Le Noble, Moira Renata, Yuyang Wang
 
 *Note*: This analysis was originally created by Enoch Hsu, Jenna Le Noble, Sarah Mohammed and Nadine Tabbaa for DSCI 100 in 2022. Refer [here](https://github.com/jennalenoble/dsci-310-group-09/blob/main/consent/consent.jpg) for the consent from each author to use this analysis for our project.
@@ -38,6 +36,8 @@ R-packages:
 * tidymodels 1.0.0
 * GGally 2.1.2
 * kknn 1.3.1
+* testthat 3.6.1
+* ggcheck 0.0.4
 
 ## License 
 
