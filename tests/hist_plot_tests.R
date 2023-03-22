@@ -1,5 +1,6 @@
 library(testthat)
 library(ggcheck)
+library(tidyverse)
 
 source("./R/hist_plot.R")
 source("./tests/hist_plot_tests_helper.R")

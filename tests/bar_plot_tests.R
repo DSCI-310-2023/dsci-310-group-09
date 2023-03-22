@@ -1,4 +1,6 @@
 library(testthat)
+library(tidyverse)
+library(ggcheck)
 
 source("./R/bar_plot.R")
 source("./tests/bar_plot_tests_helper.R")
