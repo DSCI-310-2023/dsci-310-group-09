@@ -36,7 +36,7 @@ R-packages:
 * tidymodels 1.0.0
 * GGally 2.1.2
 * kknn 1.3.1
-* testthat 3.6.1
+* testthat 3.1.7
 * ggcheck 0.0.4
 
 ## License 
