@@ -2,6 +2,8 @@ library(tidyverse)
 library(tidymodels)
 library(GGally)
 library(kknn)
+library(here)
+library(knitr)
 
 options(repr.matrix.max.rows = 10)
 
@@ -9,7 +11,6 @@ options(repr.matrix.max.rows = 10)
 
 
 bike_data <- read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/00560/SeoulBikeData.csv", locale=locale(encoding="latin1"))
-bike_data
 
 
 colnames(bike_data) <- c("date", "bike_count", "hour", "temperature", "humidity", "wind_speed", "visibility", "dew_point_temp", "solar_radiation", "rainfall", "snowfall", "seasons", "holiday", "functioning_day") 
@@ -27,7 +28,6 @@ bike_data_clean <- bike_data |>
             rainfall = mean(rainfall),
             snowfall = mean(snowfall)) |>
   select(-date)
-bike_data_clean
 
 
 

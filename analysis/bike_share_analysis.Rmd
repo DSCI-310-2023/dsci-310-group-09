@@ -4,11 +4,36 @@ author: "Vera Danilova, Jenna Le Noble, Moira Renata, Yuyang Wang"
 output: 
   bookdown::html_document2:
     default
-#bibliography: citations.bib
+  bookdown::pdf_document2:
+    default
+bibliography: references.bib
 ---
 
 # Introduction
 
-Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the city’s most popular form of public transportation, gaining over 100 million users in 6 and a half years. It became popular as many citizens favored traveling shorter distances by bike rather than taking crowded transit. Amidst the pandemic, users skyrocketed as many people found it a useful means of transportation to avoid crowded public transit (Joo-Heon, 2022). While this played a factor in an increase in users, there are still other factors that come into play that determine whether citizens are willing to use bikes as a mode of transportation. The question we will be trying to answer with our project is: In 2018, in Seoul, Korea, what were the strongest environmental predictors of the quantity of bikes rented out each day, and how effectively can those predictors be used to predict the number of bikes rented out in a given day given the environmental conditions of that day? Our dataset contains information on the weather and environmental factors of each hour of each day during 2018. The observations in the data set report on temperature, humidity, windspeed, visibility, dewpoint, solar radiation, snowfall, and rainfall. The dataset also includes observations relating to whether the bike rental facility was functional during that particular day, and whether the given day was a holiday.
+Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the city’s most popular form of public transportation, gaining over 100 million users in 6 and a half years. It became popular as many citizens favored traveling shorter distances by bike rather than taking crowded transit. Amidst the pandemic, users skyrocketed as many people found it a useful means of transportation to avoid crowded public transit [@ajudaily]. While this played a factor in an increase in users, there are still other factors that come into play that determine whether citizens are willing to use bikes as a mode of transportation. The question we will be trying to answer with our project is: In 2018, in Seoul, Korea, what were the strongest environmental predictors of the quantity of bikes rented out each day, and how effectively can those predictors be used to predict the number of bikes rented out in a given day given the environmental conditions of that day? Our dataset contains information on the weather and environmental factors of each hour of each day during 2018. The observations in the data set report on temperature, humidity, windspeed, visibility, dewpoint, solar radiation, snowfall, and rainfall. The dataset also includes observations relating to whether the bike rental facility was functional during that particular day, and whether the given day was a holiday.
 
 # Methods & Results
+
+```{r include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+source(here::here("R/data_loading_cleaning.R"))
+source(here::here("R/linear_regression_analysis.R"))
+source(here::here("R/eda_and_splitting.R"))
+```
+
+```{r bike-data-table}
+knitr::kable(head(bike_data), caption = "Original Bike Data")
+```
+
+In Table \@ref(tab:bike-data-table), we present the original bike data from the internet which includes all of the variables and their units.
+
+Next, we wrangle our data into tidy format and group the number of rented bikes by day. This produces a table of our clean data which includes the 8 different environmental factors that we wish to explore.
+
+```{r bike-data-clean-table}
+knitr::kable(head(bike_data_clean), caption = "Clean Bike Data")
+```
+
+In Table \@ref(tab:bike-data-clean-table), we present the data in tidy format. The data has been wrangled to group by day instead of by hour.
+
+To further explore our data, we will create a histogram that shows the distribution of rented bikes per day.

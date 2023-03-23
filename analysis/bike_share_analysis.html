@@ -239,6 +239,28 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+
+div.csl-bib-body { }
+div.csl-entry {
+clear: both;
+}
+.hanging div.csl-entry {
+margin-left:2em;
+text-indent:-2em;
+}
+div.csl-left-margin {
+min-width:2em;
+float:left;
+}
+div.csl-right-inline {
+margin-left:2em;
+padding-left:1em;
+}
+div.csl-indent {
+margin-left: 2em;
+}
+</style>
 
 
 
@@ -344,10 +366,249 @@ display: none;
 
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
-<p>Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the city’s most popular form of public transportation, gaining over 100 million users in 6 and a half years. It became popular as many citizens favored traveling shorter distances by bike rather than taking crowded transit. Amidst the pandemic, users skyrocketed as many people found it a useful means of transportation to avoid crowded public transit (Joo-Heon, 2022). While this played a factor in an increase in users, there are still other factors that come into play that determine whether citizens are willing to use bikes as a mode of transportation. The question we will be trying to answer with our project is: In 2018, in Seoul, Korea, what were the strongest environmental predictors of the quantity of bikes rented out each day, and how effectively can those predictors be used to predict the number of bikes rented out in a given day given the environmental conditions of that day? Our dataset contains information on the weather and environmental factors of each hour of each day during 2018. The observations in the data set report on temperature, humidity, windspeed, visibility, dewpoint, solar radiation, snowfall, and rainfall. The dataset also includes observations relating to whether the bike rental facility was functional during that particular day, and whether the given day was a holiday.</p>
+<p>Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the city’s most popular form of public transportation, gaining over 100 million users in 6 and a half years. It became popular as many citizens favored traveling shorter distances by bike rather than taking crowded transit. Amidst the pandemic, users skyrocketed as many people found it a useful means of transportation to avoid crowded public transit <span class="citation">(Joo-Heon 2022)</span>. While this played a factor in an increase in users, there are still other factors that come into play that determine whether citizens are willing to use bikes as a mode of transportation. The question we will be trying to answer with our project is: In 2018, in Seoul, Korea, what were the strongest environmental predictors of the quantity of bikes rented out each day, and how effectively can those predictors be used to predict the number of bikes rented out in a given day given the environmental conditions of that day? Our dataset contains information on the weather and environmental factors of each hour of each day during 2018. The observations in the data set report on temperature, humidity, windspeed, visibility, dewpoint, solar radiation, snowfall, and rainfall. The dataset also includes observations relating to whether the bike rental facility was functional during that particular day, and whether the given day was a holiday.</p>
 </div>
 <div id="methods-results" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Methods &amp; Results</h1>
+<table>
+<caption><span id="tab:bike-data-table">Table 2.1: </span>Original Bike Data</caption>
+<colgroup>
+<col width="7%" />
+<col width="7%" />
+<col width="3%" />
+<col width="7%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="9%" />
+<col width="10%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">date</th>
+<th align="right">bike_count</th>
+<th align="right">hour</th>
+<th align="right">temperature</th>
+<th align="right">humidity</th>
+<th align="right">wind_speed</th>
+<th align="right">visibility</th>
+<th align="right">dew_point_temp</th>
+<th align="right">solar_radiation</th>
+<th align="right">rainfall</th>
+<th align="right">snowfall</th>
+<th align="left">seasons</th>
+<th align="left">holiday</th>
+<th align="left">functioning_day</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">01/12/2017</td>
+<td align="right">254</td>
+<td align="right">0</td>
+<td align="right">-5.2</td>
+<td align="right">37</td>
+<td align="right">2.2</td>
+<td align="right">2000</td>
+<td align="right">-17.6</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">Winter</td>
+<td align="left">No Holiday</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="left">01/12/2017</td>
+<td align="right">204</td>
+<td align="right">1</td>
+<td align="right">-5.5</td>
+<td align="right">38</td>
+<td align="right">0.8</td>
+<td align="right">2000</td>
+<td align="right">-17.6</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">Winter</td>
+<td align="left">No Holiday</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="left">01/12/2017</td>
+<td align="right">173</td>
+<td align="right">2</td>
+<td align="right">-6.0</td>
+<td align="right">39</td>
+<td align="right">1.0</td>
+<td align="right">2000</td>
+<td align="right">-17.7</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">Winter</td>
+<td align="left">No Holiday</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="left">01/12/2017</td>
+<td align="right">107</td>
+<td align="right">3</td>
+<td align="right">-6.2</td>
+<td align="right">40</td>
+<td align="right">0.9</td>
+<td align="right">2000</td>
+<td align="right">-17.6</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">Winter</td>
+<td align="left">No Holiday</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="left">01/12/2017</td>
+<td align="right">78</td>
+<td align="right">4</td>
+<td align="right">-6.0</td>
+<td align="right">36</td>
+<td align="right">2.3</td>
+<td align="right">2000</td>
+<td align="right">-18.6</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">Winter</td>
+<td align="left">No Holiday</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="left">01/12/2017</td>
+<td align="right">100</td>
+<td align="right">5</td>
+<td align="right">-6.4</td>
+<td align="right">37</td>
+<td align="right">1.5</td>
+<td align="right">2000</td>
+<td align="right">-18.7</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">Winter</td>
+<td align="left">No Holiday</td>
+<td align="left">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>In Table <a href="#tab:bike-data-table">2.1</a>, we present the original bike data from the internet which includes all of the variables and their units.</p>
+<p>Next, we wrangle our data into tidy format and group the number of rented bikes by day. This produces a table of our clean data which includes the 8 different environmental factors that we wish to explore.</p>
+<table>
+<caption><span id="tab:bike-data-clean-table">Table 2.2: </span>Clean Bike Data</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="8%" />
+<col width="10%" />
+<col width="10%" />
+<col width="14%" />
+<col width="15%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">bike_count</th>
+<th align="right">temperature</th>
+<th align="right">humidity</th>
+<th align="right">wind_speed</th>
+<th align="right">visibility</th>
+<th align="right">dew_point_temp</th>
+<th align="right">solar_radiation</th>
+<th align="right">rainfall</th>
+<th align="right">snowfall</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">4290</td>
+<td align="right">-1.283333</td>
+<td align="right">39.33333</td>
+<td align="right">1.454167</td>
+<td align="right">1894.8333</td>
+<td align="right">-13.866667</td>
+<td align="right">0.2558333</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="right">5377</td>
+<td align="right">-3.866667</td>
+<td align="right">44.00000</td>
+<td align="right">1.608333</td>
+<td align="right">1923.6250</td>
+<td align="right">-15.012500</td>
+<td align="right">0.3370833</td>
+<td align="right">0.0000000</td>
+<td align="right">0.9041667</td>
+</tr>
+<tr class="odd">
+<td align="right">5132</td>
+<td align="right">0.450000</td>
+<td align="right">64.20833</td>
+<td align="right">3.554167</td>
+<td align="right">1084.0000</td>
+<td align="right">-6.387500</td>
+<td align="right">0.7475000</td>
+<td align="right">0.1041667</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="right">17388</td>
+<td align="right">15.183333</td>
+<td align="right">68.91667</td>
+<td align="right">1.570833</td>
+<td align="right">831.8333</td>
+<td align="right">9.370833</td>
+<td align="right">0.3020833</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="right">26820</td>
+<td align="right">20.341667</td>
+<td align="right">72.79167</td>
+<td align="right">1.437500</td>
+<td align="right">456.4583</td>
+<td align="right">15.120833</td>
+<td align="right">0.5175000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="right">31928</td>
+<td align="right">23.708333</td>
+<td align="right">50.12500</td>
+<td align="right">1.954167</td>
+<td align="right">1598.1667</td>
+<td align="right">11.862500</td>
+<td align="right">1.1641667</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+</tr>
+</tbody>
+</table>
+<p>In Table <a href="#tab:bike-data-clean-table">2.2</a>, we present the data in tidy format. The data has been wrangled to group by day instead of by hour.</p>
+<p>To further explore our data, we will create a histogram that shows the distribution of rented bikes per day.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ajudaily" class="csl-entry">
+Joo-Heon, Kim. 2022. <em>Eoul’s Public Bike Rental Service Becomes Popular Public Transport System.</em> AJU Business Daily. <a href="https://www.ajudaily.com/view/20220427094305098">https://www.ajudaily.com/view/20220427094305098</a>.
+</div>
+</div>
 </div>
 
 
