@@ -1,3 +1,5 @@
+title:'DSCI-310-GROUP-09'
+
 library(tidyverse)
 library(tidymodels)
 library(GGally)
@@ -5,10 +7,7 @@ library(kknn)
 options(repr.matrix.max.rows = 10)
 
 
-source("../R/bar_plot.R")
-source("../R/hist_plot.R")
-source("../R/scatter_plot.R")
-source("../R/summarize_column.R")
+
 
 bike_data <- read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/00560/SeoulBikeData.csv", locale=locale(encoding="latin1"))
 bike_data
@@ -32,19 +31,7 @@ bike_data_clean <- bike_data |>
 bike_data_clean
 
 
-bike_hist <- hist_plot(bike_data_clean, 
-                       bike_count, 
-                       "Number of Rented Bikes per Day", 
-                       "Count", 
-                       "Figure 1: Distribution of Rented Bikes per Day",
-                       15)
-bike_hist
 
-bike_param <- bike_data_clean %>%
-  summarize(mean = mean(bike_count),
-            med = median(bike_count),
-            sd = sd(bike_count))
-bike_param
 
 
 
