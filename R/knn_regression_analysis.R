@@ -1,4 +1,4 @@
-source("./R/eda_and_splitting.R")
+source(here("R/eda_and_splitting.R"))
 
 #KNN Model 1
 

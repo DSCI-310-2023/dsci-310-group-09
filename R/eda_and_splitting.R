@@ -1,5 +1,5 @@
-source("./R/data_loading_cleaning.R")
-source("./R/functions/summarize_column.R")
+source(here::here("R/data_loading_cleaning.R"))
+source(here::here("R/functions/summarize_column.R"))
 
 bike_param <- bike_data_clean %>%
   summarize(mean = mean(bike_count),
