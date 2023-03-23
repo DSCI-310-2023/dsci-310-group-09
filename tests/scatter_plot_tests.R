@@ -1,6 +1,6 @@
-library(ggcheck)
-
 library(testthat)
+library(tidyverse)
+library(ggcheck)
 
 source("./R/scatter_plot.R")
 source("./tests/scatter_plot_tests_helper.R")
@@ -29,7 +29,4 @@ test_that("Identifies labels correctly", {
   )
 }
 )
-
-
-
 
