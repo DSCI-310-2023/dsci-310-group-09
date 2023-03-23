@@ -1,13 +1,8 @@
-
-
-library(tidyverse)
-library(tidymodels)
-
-
-
-source("../R/bar_plot.R")
-source("../R/hist_plot.R")
-source("../R/scatter_plot.R")
+source("./R/functions/bar_graph.R")
+source("./R/functions/hist_plot.R")
+source("./R/functions/scatter_plot.R")
+source("./R/linear_regression_analysis.R")
+source("./R/knn_regression_analysis.R")
 
 #histogram plot: distribution of rented bikes per day
 bike_hist <- hist_plot(bike_data_clean, 
@@ -24,7 +19,6 @@ bike_pairs <- bike_training |>
   ggpairs() +
   ggtitle("Figure 2: Predictor Correlations") +
   theme(text = element_text(size = 15))
-bike_pairs
 
 #bar plot: strength of environmental factors on bike count
 bike_cors_plot <- bar_graph(bike_cors, 
