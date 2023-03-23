@@ -1,9 +1,8 @@
-title:'DSCI-310-GROUP-09'
-
 library(tidyverse)
 library(tidymodels)
 library(GGally)
 library(kknn)
+
 options(repr.matrix.max.rows = 10)
 
 
