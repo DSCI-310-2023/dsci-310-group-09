@@ -28,7 +28,6 @@ bike_min_1 <- bike_results_1 |>
     filter(.metric == "rmse") |>
     arrange(mean) |> 
     slice(1)
-bike_min_1
 
 k_min_1 <- bike_min_1 |>
     pull(neighbors)
@@ -47,26 +46,10 @@ bike_summary_1 <- bike_best_fit_1 |>
     bind_cols(bike_testing) |>
     metrics(truth = bike_count, estimate = .pred) |>
     filter(.metric == "rmse")       
-bike_summary_1
 
-k_min_1 <- bike_min_1 |>
-    pull(neighbors)
-
-bike_best_spec_1 <- nearest_neighbor(weight_func = "rectangular", neighbors = k_min_1) |>
-    set_engine("kknn") |>
-    set_mode("regression")
-
-bike_best_fit_1 <- workflow() |>
-    add_recipe(bike_recipe_1) |>
-    add_model(bike_best_spec_1) |>
-    fit(data = bike_training)
-
-bike_summary_1 <- bike_best_fit_1 |>
-    predict(bike_testing) |>
-    bind_cols(bike_testing) |>
-    metrics(truth = bike_count, estimate = .pred) |>
-    filter(.metric == "rmse")       
-bike_summary_1
+bike_preds_1 <- bike_best_fit_1 |>
+  predict(bike_training) |>
+  bind_cols(bike_training)
 
 #KNN Model 2
 
@@ -96,7 +79,6 @@ bike_min_2 <- bike_results_2 |>
     filter(.metric == "rmse") |>
     arrange(mean) |> 
     slice(1)
-bike_min_2
 
 k_min_2 <- bike_min_2 |>
     pull(neighbors)
@@ -115,7 +97,10 @@ bike_summary_2 <- bike_best_fit_2 |>
     bind_cols(bike_testing) |>
     metrics(truth = bike_count, estimate = .pred) |>
     filter(.metric == "rmse")       
-bike_summary_2
+
+bike_preds_2 <- bike_best_fit_2 |>
+  predict(bike_training) |>
+  bind_cols(bike_training)
 
 #KNN Model 3
 set.seed(1008)
@@ -144,7 +129,6 @@ bike_min_3 <- bike_results_3 |>
     filter(.metric == "rmse") |>
     arrange(mean) |> 
     slice(1)
-bike_min_3
 
 k_min_3 <- bike_min_3 |>
     pull(neighbors)
@@ -163,4 +147,3 @@ bike_summary_3 <- bike_best_fit_3 |>
     bind_cols(bike_testing) |>
     metrics(truth = bike_count, estimate = .pred) |>
     filter(.metric == "rmse")       
-bike_summary_3

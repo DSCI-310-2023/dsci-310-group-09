@@ -1,3 +1,4 @@
+
 source("./R/functions/bar_graph.R")
 source("./R/functions/hist_plot.R")
 source("./R/functions/scatter_plot.R")
@@ -5,7 +6,7 @@ source("./R/linear_regression_analysis.R")
 source("./R/knn_regression_analysis.R")
 
 #histogram plot: distribution of rented bikes per day
-bike_hist <- hist_plot(bike_data_clean, 
+bike_histogram <- hist_plot(bike_data_clean, 
                        bike_count, 
                        "Number of Rented Bikes per Day", 
                        "Count", 
@@ -15,13 +16,13 @@ bike_hist <- hist_plot(bike_data_clean,
 
 #ggpairs plot: predictor correlations 
 options(repr.plot.width = 8, repr.plot.height = 8)
-bike_pairs <- bike_training |>
+bike_correlations_ggpairs <- bike_training %>%
   ggpairs() +
   ggtitle("Figure 2: Predictor Correlations") +
   theme(text = element_text(size = 15))
 
 #bar plot: strength of environmental factors on bike count
-bike_cors_plot <- bar_graph(bike_cors, 
+bike_count_barplot <- bar_graph(bike_cors, 
                             bike_cors$factors, 
                             bike_cors$r, 
                             "Environmental Factors", 
@@ -30,7 +31,7 @@ bike_cors_plot <- bar_graph(bike_cors,
                             "Figure 3: Correlation Strength Between \nBike Count and Environmental Factors")
 
 #scatter plot: regression for bike count vs temperature 
-lm_plot_1 <- scatter_plot(bike_training, 
+reg_bike_count_temp <- scatter_plot(bike_training, 
                           temperature, 
                           bike_count, 
                           "Temperature (°C)", 
@@ -39,7 +40,7 @@ lm_plot_1 <- scatter_plot(bike_training,
   geom_smooth(method = "lm", se = FALSE)
 
 #scatter plot: regression for bike count vs solar radiation
-lm_plot_2 <- scatter_plot(bike_training, 
+reg_bike_count_solar_rad <- scatter_plot(bike_training, 
                           solar_radiation, 
                           bike_count, 
                           "Solar Radiation (MJ/m2)", 
@@ -48,7 +49,7 @@ lm_plot_2 <- scatter_plot(bike_training,
   geom_smooth(method = "lm", se = FALSE)
 
 #scatter plot: knn for number of bikes rented vs temperature 
-bike_plot_1 <- scatter_plot(bike_preds_1, 
+knn_bike_count_temp <- scatter_plot(bike_preds_1, 
                             temperature, 
                             bike_count, 
                             "Temperature (°C)", 
@@ -58,7 +59,7 @@ bike_plot_1 <- scatter_plot(bike_preds_1,
             mapping = aes(x = temperature, y = .pred), color = "blue")
 
 #scatter plot: knn for number of bikes rented vs solar radiation
-bike_plot_2 <- scatter_plot(bike_preds_2, 
+knn_bike_count_solar_rad <- scatter_plot(bike_preds_2, 
                             solar_radiation, 
                             bike_count, 
                             "Solar Radiation (MJ/m2)", 
