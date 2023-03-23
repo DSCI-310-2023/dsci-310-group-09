@@ -4,8 +4,6 @@ author: "Vera Danilova, Jenna Le Noble, Moira Renata, Yuyang Wang"
 output: 
   bookdown::html_document2:
     default
-  bookdown::pdf_document2:
-    default
 bibliography: references.bib
 ---
 
@@ -37,3 +35,11 @@ knitr::kable(head(bike_data_clean), caption = "Clean Bike Data")
 In Table \@ref(tab:bike-data-clean-table), we present the data in tidy format. The data has been wrangled to group by day instead of by hour.
 
 To further explore our data, we will create a histogram that shows the distribution of rented bikes per day.
+
+```{r bike-hist}
+#| message=FALSE, 
+#| warning=FALSE,
+#| fig.cap="Bike Histogram."
+
+knitr::include_graphics(here::here("output/bike_histogram.png"))
+```
