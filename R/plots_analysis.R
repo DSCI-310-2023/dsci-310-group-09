@@ -1,9 +1,9 @@
 
-source("./R/functions/bar_graph.R")
-source("./R/functions/hist_plot.R")
-source("./R/functions/scatter_plot.R")
-source("./R/linear_regression_analysis.R")
-source("./R/knn_regression_analysis.R")
+source(here::here("R/functions/bar_graph.R"))
+source(here::here("R/functions/hist_plot.R"))
+source(here::here("R/functions/scatter_plot.R"))
+source(here::here("R/linear_regression_analysis.R"))
+source(here::here("R/knn_regression_analysis.R"))
 
 #histogram plot: distribution of rented bikes per day
 bike_histogram <- hist_plot(bike_data_clean, 
