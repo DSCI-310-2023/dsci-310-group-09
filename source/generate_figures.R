@@ -20,7 +20,7 @@ library(gridExtra)
 library(knitr)
 library(tidyverse)
 
-source("./R/plots_analysis.R")
+source(here::here("R/plots_analysis.R"))
 
 opt <- docopt(doc)
 
