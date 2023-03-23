@@ -1,3 +1,5 @@
+source("./R/eda_and_splitting.R")
+
 # LM Model 1
 
 lm_spec <- linear_reg() |>
