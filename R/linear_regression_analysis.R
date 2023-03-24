@@ -13,6 +13,16 @@ bike_fit_1 <- workflow() |>
   add_model(lm_spec) |>
   fit(data = bike_training)
 
+intercept_1 <- bike_fit_1 |>
+  tidy() |>
+  slice(1) |>
+  pull(estimate)
+
+slope_1 <- bike_fit_1 |>
+  tidy() |>
+  slice(2) |>
+  pull(estimate)
+
 lm_rmse_1 <- bike_fit_1 |>
   predict(bike_training) |>
   bind_cols(bike_training) |>
@@ -37,6 +47,16 @@ bike_fit_2 <- workflow() |>
   add_recipe(bike_recipe_2) |>
   add_model(lm_spec) |>
   fit(data = bike_training)
+
+intercept_2 <- bike_fit_2 |>
+  tidy() |>
+  slice(1) |>
+  pull(estimate)
+
+slope_2 <- bike_fit_2 |>
+  tidy() |>
+  slice(2) |>
+  pull(estimate)
 
 lm_rmse_2 <- bike_fit_2 |>
   predict(bike_training) |>
