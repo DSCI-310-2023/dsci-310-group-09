@@ -62,4 +62,13 @@ From Figure \@ref(fig:bike-cor), we note that temperature, solar radiation, and 
 
 Now that we have identified the environmental factors that have the greatest correlation with bike count, we can begin to construct our models. We want to compare linear regression and K-NN regression models to guage which model is most accurate. We will begin with linear regression.
 
+For our first linear regression model, we use temperature as the sole predictor. We find that the RMSE value, which is the root mean squared error for the training data, is `r lm_rmse_1`. The RMSPE value, which is the root mean squared prediction error for the testing data, is `r lm_rmspe_1`. This tells us that the average error of our model when predicting the number of bikes per day based on temperature is around 6819. To better understand the model, we plot the data as a scatter plot with the best fit line. The equation for the line of best fit is $y = 9293.4 + 642.6x_1$, where $y$ = number of bikes rented per day, and $x_1$ = temperature (°C).
+
+```{r lm-plot-1, fig.cap="Linear regression model with temperature as predictor", out.width="60%"}
+
+knitr::include_graphics(here::here("output/lm_bike_count_temp.png"))
+```
+
+The next linear regression model uses solar radiation as the sole predictor. This leads to a RMSE value of `r lm_rmse_2` and a RMSPE value of `r lm_rmspe_2`. The equation for the best fit line is $y = 4602 + 23038x_1$ where $y =$ number of bikes rented per day, and $x_1 =$ solar radiation $(MJ/m^2)$.
+
 # References
