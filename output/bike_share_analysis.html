@@ -366,7 +366,7 @@ display: none;
 
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
-<p>Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the city’s most popular form of public transportation, gaining over 100 million users in 6 and a half years. It became popular as many citizens favored traveling shorter distances by bike rather than taking crowded transit. Amidst the pandemic, users skyrocketed as many people found it a useful means of transportation to avoid crowded public transit <span class="citation">(Joo-Heon 2022)</span>. While this played a factor in an increase in users, there are still other factors that come into play that determine whether citizens are willing to use bikes as a mode of transportation. The question we will be trying to answer with our project is: In 2018, in Seoul, Korea, what were the strongest environmental predictors of the quantity of bikes rented out each day, and how effectively can those predictors be used to predict the number of bikes rented out in a given day given the environmental conditions of that day? Our dataset contains information on the weather and environmental factors of each hour of each day during 2018. The observations in the data set report on temperature, humidity, windspeed, visibility, dewpoint, solar radiation, snowfall, and rainfall. The dataset also includes observations relating to whether the bike rental facility was functional during that particular day, and whether the given day was a holiday.</p>
+<p>Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the city’s most popular form of public transportation, gaining over 100 million users in 6 and a half years. It became popular as many citizens favored traveling shorter distances by bike rather than taking crowded transit. Amidst the pandemic, users skyrocketed as many people found it a useful means of transportation to avoid crowded public transit <span class="citation">(Joo-Heon 2022)</span>. While this played a factor in an increase in users, there are still other factors that come into play that determine whether citizens are willing to use bikes as a mode of transportation. The question we will be trying to answer with our project is: In 2018, in Seoul, Korea, what were the strongest environmental predictors of the quantity of bikes rented out each day, and how effectively can those predictors be used to predict the number of bikes rented out in a given day given the environmental conditions of that day? Our dataset <span class="citation">(<strong>dataset?</strong>)</span> contains information on the weather and environmental factors of each hour of each day during 2018. The observations in the data set report on temperature, humidity, windspeed, visibility, dewpoint, solar radiation, snowfall, and rainfall. The dataset <span class="citation">(<strong>dataset?</strong>)</span> also includes observations relating to whether the bike rental facility was functional during that particular day, and whether the given day was a holiday.</p>
 </div>
 <div id="methods-results" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Methods &amp; Results</h1>
@@ -646,7 +646,7 @@ Figure 2.5: Linear regression model with solar radiation as predictor
 <ul>
 <li><span class="math inline">\(y =\)</span> number of bikes rented per day</li>
 <li><span class="math inline">\(x_1 =\)</span> temperature (°C)</li>
-<li>$x_2 = $ solar radiation <span class="math inline">\((MJ/m^2)\)</span></li>
+<li><span class="math inline">\(x_2 =\)</span> solar radiation <span class="math inline">\((MJ/m^2)\)</span></li>
 </ul>
 <p>When comparing the 3 different linear regression models, we notice that the RMSPE value for the model with both predictors is lower than the models that use only one predictor. Therefore, the model that uses both predictors is a better model to predict the number of bikes rented per day.</p>
 <p>Moving on to K Nearest Neighbours (K-NN) regression, we first build a model that uses uses only temperature as the predictor. We find that using 27 neighbors results in the lowest RMSE value of 5703.8. With a model that uses 27 neighbors, we find that the RMSPE value is 6092.35. Below, is a scatter plot to better visualize the relation between bike count and temperature with our best neighbors value. It includes the predicted curve as shown in blue.</p>
@@ -683,7 +683,7 @@ Hall, Jarrod. n.d. <em>Winter Cycling in South Korea - Tips &amp; Gear to Keep R
 Jensen, Erik. 2021. <em>Cycling in South Korea: 5 Best Paths, When to Go, and Travel Tips.</em> Bookmundi.com. <a href="https://www.bookmundi.com/t/cycling-in-south-korea-5-best-paths">www.bookmundi.com/t/cycling-in-south-korea-5-best-paths</a>.
 </div>
 <div id="ref-ajudaily" class="csl-entry">
-Joo-Heon, Kim. 2022. <em>Eoul’s Public Bike Rental Service Becomes Popular Public Transport System.</em> AJU Business Daily. <a href="https://www.ajudaily.com/view/20220427094305098">https://www.ajudaily.com/view/20220427094305098</a>.
+Joo-Heon, Kim. 2022. <em>Seoul’s Public Bike Rental Service Becomes Popular Public Transport System.</em> AJU Business Daily. <a href="https://www.ajudaily.com/view/20220427094305098">https://www.ajudaily.com/view/20220427094305098</a>.
 </div>
 </div>
 </div>
