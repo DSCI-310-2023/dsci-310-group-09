@@ -1,3 +1,4 @@
+.PHONY: all 
 all: analysis/bike_share_analysis.Rmd
 
 .PHONY: report
