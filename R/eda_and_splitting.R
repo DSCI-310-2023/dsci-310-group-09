@@ -5,7 +5,12 @@ bike_param <- bike_data_clean %>%
   summarize(mean = mean(bike_count),
             med = median(bike_count),
             sd = sd(bike_count))
-bike_param
+
+bike_count_mean <- mean(bike_data_clean$bike_count)
+
+bike_count_max <- max(bike_data_clean$bike_count)
+
+bike_count_min <- min(bike_data_clean$bike_count)
 
 set.seed(2020)
 bike_split <- initial_split(bike_data_clean, prop = 0.7, strata = bike_count)

@@ -4,8 +4,6 @@ author: "Vera Danilova, Jenna Le Noble, Moira Renata, Yuyang Wang"
 output: 
   bookdown::html_document2:
     default
-  bookdown::pdf_document2:
-    default
 bibliography: references.bib
 ---
 
@@ -22,11 +20,11 @@ source(here::here("R/linear_regression_analysis.R"))
 source(here::here("R/eda_and_splitting.R"))
 ```
 
-```{r bike-data-table}
+```{r bike-data-table, out.wdith="75%"}
 knitr::kable(head(bike_data), caption = "Original Bike Data")
 ```
 
-In Table \@ref(tab:bike-data-table), we present the original bike data from the internet which includes all of the variables and their units.
+Table \@ref(tab:bike-data-table) presents the original bike share data from the internet, which includes all of the variables and their units.
 
 Next, we wrangle our data into tidy format and group the number of rented bikes by day. This produces a table of our clean data which includes the 8 different environmental factors that we wish to explore.
 
@@ -34,6 +32,34 @@ Next, we wrangle our data into tidy format and group the number of rented bikes 
 knitr::kable(head(bike_data_clean), caption = "Clean Bike Data")
 ```
 
-In Table \@ref(tab:bike-data-clean-table), we present the data in tidy format. The data has been wrangled to group by day instead of by hour.
+Table \@ref(tab:bike-data-clean-table) presents the data in tidy format. The data has been wrangled to group by day instead of by hour.
 
-To further explore our data, we will create a histogram that shows the distribution of rented bikes per day.
+To further explore our data, we examine the distribution of rented bikes per day with a histogram.
+
+```{r bike-hist, fig.cap="Histogram of rented bikes per day", out.width="60%"}
+
+knitr::include_graphics(here::here("output/bike_histogram.png"))
+```
+
+
+The distribution in Figure \@ref(fig:bike-hist) shows that the number of rented bikes per day takes on a bimodal shape with two peaks. The distribution ranges from `r bike_count_min` to `r bike_count_max` bikes rented, with a mean of `r bike_count_mean` bikes rented per day.
+
+After splitting our data into a training set (70%) and testing set, we assess the correlation between the amount of bikes rented and of the environmental/weather predictors.
+
+```{r bike-ggpairs, fig.cap="Scatter plots of all variables plotted against each other and their correlation coefficients", out.width="60%"}
+
+knitr::include_graphics(here::here("output/bike_correlations_ggpairs.png"))
+```
+
+We can visualize which environmental factors correlate best with bikes rented per day with a bar graph.
+
+```{r bike-cor, fig.cap="Strength of correlation between bike count and environmental factors", out.width="60%"}
+
+knitr::include_graphics(here::here("output/bike_count_barplot.png"))
+```
+
+From Figure \@ref(fig:bike-cor), we note that temperature, solar radiation, and dew point temperature have the strongest correlation with bikes rented per day by a large margin. However, we also notice that temperature and dew point temperature are very strongly correlated to each other as shown in Figure \@ref(fig:bike-ggpairs), with a correlation coefficient of 0.966, so including both factors would likely give twice the priority to the temperature that day. Additionally, the correlation coefficient for dew point and bike count is less than 0.7, so it is not a very strong correlation. Therefore, we determine that it would be most appropriate to simply include only temperature and solar radiation as the predictors, since both of their correlation coefficients are above 0.7.
+
+Now that we have identified the environmental factors that have the greatest correlation with bike count, we can begin to construct our models. We want to compare linear regression and K-NN regression models to guage which model is most accurate. We will begin with linear regression.
+
+# References
