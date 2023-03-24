@@ -9,7 +9,7 @@ bibliography: references.bib
 
 # Introduction
 
-Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the city’s most popular form of public transportation, gaining over 100 million users in 6 and a half years. It became popular as many citizens favored traveling shorter distances by bike rather than taking crowded transit. Amidst the pandemic, users skyrocketed as many people found it a useful means of transportation to avoid crowded public transit [@ajudaily]. While this played a factor in an increase in users, there are still other factors that come into play that determine whether citizens are willing to use bikes as a mode of transportation. The question we will be trying to answer with our project is: In 2018, in Seoul, Korea, what were the strongest environmental predictors of the quantity of bikes rented out each day, and how effectively can those predictors be used to predict the number of bikes rented out in a given day given the environmental conditions of that day? Our dataset contains information on the weather and environmental factors of each hour of each day during 2018. The observations in the data set report on temperature, humidity, windspeed, visibility, dewpoint, solar radiation, snowfall, and rainfall. The dataset also includes observations relating to whether the bike rental facility was functional during that particular day, and whether the given day was a holiday.
+Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the city’s most popular form of public transportation, gaining over 100 million users in 6 and a half years. It became popular as many citizens favored traveling shorter distances by bike rather than taking crowded transit. Amidst the pandemic, users skyrocketed as many people found it a useful means of transportation to avoid crowded public transit [@ajudaily]. While this played a factor in an increase in users, there are still other factors that come into play that determine whether citizens are willing to use bikes as a mode of transportation. The question we will be trying to answer with our project is: In 2018, in Seoul, Korea, what were the strongest environmental predictors of the quantity of bikes rented out each day, and how effectively can those predictors be used to predict the number of bikes rented out in a given day given the environmental conditions of that day? Our dataset [@dataset] contains information on the weather and environmental factors of each hour of each day during 2018. The observations in the data set report on temperature, humidity, windspeed, visibility, dewpoint, solar radiation, snowfall, and rainfall. The dataset [@dataset] also includes observations relating to whether the bike rental facility was functional during that particular day, and whether the given day was a holiday.
 
 # Methods & Results
 
@@ -83,7 +83,7 @@ The final linear regression model uses both environmental factors (temperature a
 
 * $y =$ number of bikes rented per day
 * $x_1 =$ temperature (°C)
-* $x_2 = $ solar radiation $(MJ/m^2)$
+* $x_2 =$ solar radiation $(MJ/m^2)$
 
 When comparing the 3 different linear regression models, we notice that the RMSPE value for the model with both predictors is lower than the models that use only one predictor. Therefore, the model that uses both predictors is a better model to predict the number of bikes rented per day.
 
