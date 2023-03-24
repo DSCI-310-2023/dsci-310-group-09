@@ -32,6 +32,9 @@ bike_min_1 <- bike_results_1 |>
 k_min_1 <- bike_min_1 |>
     pull(neighbors)
 
+knn_rmse_1 <- bike_min_1 |>
+  pull(mean)
+
 bike_best_spec_1 <- nearest_neighbor(weight_func = "rectangular", neighbors = k_min_1) |>
     set_engine("kknn") |>
     set_mode("regression")
@@ -46,6 +49,9 @@ bike_summary_1 <- bike_best_fit_1 |>
     bind_cols(bike_testing) |>
     metrics(truth = bike_count, estimate = .pred) |>
     filter(.metric == "rmse")       
+
+knn_rmspe_1 <- bike_summary_1 |>
+  pull(.estimate)
 
 bike_preds_1 <- bike_best_fit_1 |>
   predict(bike_training) |>
@@ -83,6 +89,9 @@ bike_min_2 <- bike_results_2 |>
 k_min_2 <- bike_min_2 |>
     pull(neighbors)
 
+knn_rmse_2 <- bike_min_2 |>
+  pull(mean)
+
 bike_best_spec_2 <- nearest_neighbor(weight_func = "rectangular", neighbors = k_min_2) |>
     set_engine("kknn") |>
     set_mode("regression")
@@ -96,7 +105,10 @@ bike_summary_2 <- bike_best_fit_2 |>
     predict(bike_testing) |>
     bind_cols(bike_testing) |>
     metrics(truth = bike_count, estimate = .pred) |>
-    filter(.metric == "rmse")       
+    filter(.metric == "rmse")   
+
+knn_rmspe_2 <- bike_summary_2 |>
+  pull(.estimate)
 
 bike_preds_2 <- bike_best_fit_2 |>
   predict(bike_training) |>
@@ -133,6 +145,9 @@ bike_min_3 <- bike_results_3 |>
 k_min_3 <- bike_min_3 |>
     pull(neighbors)
 
+knn_rmse_3 <- bike_min_3 |>
+  pull(mean)
+
 bike_best_spec_3 <- nearest_neighbor(weight_func = "rectangular", neighbors = k_min_3) |>
     set_engine("kknn") |>
     set_mode("regression")
@@ -146,4 +161,7 @@ bike_summary_3 <- bike_best_fit_3 |>
     predict(bike_testing) |>
     bind_cols(bike_testing) |>
     metrics(truth = bike_count, estimate = .pred) |>
-    filter(.metric == "rmse")       
+    filter(.metric == "rmse")  
+
+knn_rmspe_3 <- bike_summary_3 |>
+  pull(.estimate)
