@@ -9,7 +9,7 @@ bike_histogram <- hist_plot(bike_data_clean,
                             bike_count, 
                             "Number of Rented Bikes per Day", 
                             "Count", 
-                            "Figure 1: Distribution of Rented Bikes per Day",
+                            "Distribution of Rented Bikes per Day",
                             15)
 
 ggsave("output/bike_histogram.png", bike_histogram)
@@ -18,8 +18,8 @@ ggsave("output/bike_histogram.png", bike_histogram)
 options(repr.plot.width = 8, repr.plot.height = 8)
 bike_correlations_ggpairs <- bike_training %>%
   ggpairs() +
-  ggtitle("Figure 2: Predictor Correlations") +
-  theme(text = element_text(size = 15))
+  ggtitle("Predictor Correlations") +
+  theme(text = element_text(size = 12))
 
 ggsave("output/bike_correlations_ggpairs.png", bike_correlations_ggpairs)
 
@@ -30,7 +30,7 @@ bike_count_barplot <- bar_graph(bike_cors,
                                 "Environmental Factors", 
                                 "Correlational Coefficient", 
                                 "Factors", 
-                                "Figure 3: Correlation Strength Between \nBike Count and Environmental Factors")
+                                "Correlation Strength Between \nBike Count and Environmental Factors")
 
 ggsave("output/bike_count_barplot.png", bike_count_barplot)
 
@@ -40,7 +40,7 @@ lm_bike_count_temp <- scatter_plot(bike_training,
                                     bike_count, 
                                     "Temperature (°C)", 
                                     "Number of Bikes Rented Per Day",     
-                                    "Figure 4: Best Fit Line for Bike Count vs Temperature", 15) +
+                                    "Best Fit Line for Bike Count vs Temperature", 15) +
   geom_smooth(method = "lm", se = FALSE)
 
 ggsave("output/lm_bike_count_temp.png", lm_bike_count_temp)
@@ -51,7 +51,7 @@ lm_bike_count_solar_rad <- scatter_plot(bike_training,
                                          bike_count, 
                                          "Solar Radiation (MJ/m2)", 
                                          "Number of Bikes Rented Per Day",     
-                                         "Figure 5: Best Fit Line for Bike Count vs Solar Radiation", 15) +
+                                         "Best Fit Line for Bike Count vs Solar Radiation", 15) +
   geom_smooth(method = "lm", se = FALSE)
 
 ggsave("output/lm_bike_count_solar_rad.png", lm_bike_count_solar_rad)
@@ -62,7 +62,7 @@ knn_bike_count_temp <- scatter_plot(bike_preds_1,
                                     bike_count, 
                                     "Temperature (°C)", 
                                     "Number of Bikes Rented Per Day",     
-                                    "Figure 6: Number of Bikes Rented vs Temperature", 15) +
+                                    "Number of Bikes Rented vs Temperature", 15) +
   geom_line(data = bike_preds_1, 
             mapping = aes(x = temperature, y = .pred), color = "blue")
 
@@ -74,7 +74,7 @@ knn_bike_count_solar_rad <- scatter_plot(bike_preds_2,
                                          bike_count, 
                                          "Solar Radiation (MJ/m2)", 
                                          "Number of Bikes Rented Per Day",     
-                                         "Figure 7: Number of Bikes Rented vs Solar Radiation", 15) +
+                                         "Number of Bikes Rented vs Solar Radiation", 15) +
   geom_line(data = bike_preds_2, 
             mapping = aes(x = solar_radiation, y = .pred), color = "blue")
 
