@@ -16,16 +16,19 @@ The analysis report can be found [here](https://github.com/jennalenoble/dsci-310
 
 ## Usage
 
-We use a Docker container image to make the computational environment for this project reproducible. Follow the steps below to interactively run and explore the project in Jupyter Lab:
+We use a Docker container image to make the computational environment for this project reproducible. Download docker application at the link: https://hub.docker.com
+Create an account and open the docker application.
+Follow the steps below to interactively run the following commands:
 
-* Clone this GitHub repository by clicking the green `code` button, copy the url that looks like `https://github.com/jennalenoble/dsci-310-group-09.git`, and run `git clone <url>` in the terminal.
-* Navigate to the root of this project using `cd dsci-310-group-09`.
-* Run the command in your terminal:
-```docker run -p 8888:8888 --rm -v /$(pwd):/home/jovyan/work jennalenoble/dsci-310-group-09:latest```
-    * Note: run the project interactively by using `-it`: e.g. `docker run -it --rm -v /$(pwd):/home/jovyan/work jennalenoble/dsci-310-group-09:latest`.
-    * Note: if running in Windows terminal, the command should be `docker run --rm -it -v /$(pwd):<PATH_ON_CONTAINER> <IMAGE_NAME>`. If running in Power    Shell then the command should be `docker run --rm -it -v <ABSOLUTE_PATH_TO_CONTAINER>:<PATH_ON_CONTAINER> <IMAGE_NAME>` and the path should be formatted like `C:\Users\tiffany.timbers\Documents\project\:/home/project`.
-* Copy the URL from the terminal that looks like `http://127.0.0.1:8888/lab?token=d9704724bf0267d3d9262698ffbb88123633f8c8f4b1a305` into your web browser to access Jupyter Lab.
-* Next, in Jupyter lab, navigate to, and open `analysis/bike_share_analysis.ipynb` and click **Kernel** > **Restart and runall** to run the entire analysis.
+`docker pull jennalenoble/dsci-310-group-09:v0.0.2`
+
+Then using the code below to install required dependencies on your local machine:
+
+`docker run --rm -it -p 8787:8787 -v /$(pwd):/home/jovyan/work jennalenoble/dsci-310-group-09:v0.0.2`
+
+
+
+
  
 ## Dependencies
 
