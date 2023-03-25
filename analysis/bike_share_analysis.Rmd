@@ -9,7 +9,7 @@ bibliography: references.bib
 
 # Introduction
 
-Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the city’s most popular form of public transportation, gaining over 100 million users in 6 and a half years. It became popular as many citizens favored traveling shorter distances by bike rather than taking crowded transit. Amidst the pandemic, users skyrocketed as many people found it a useful means of transportation to avoid crowded public transit [@ajudaily]. While this played a factor in an increase in users, there are still other factors that come into play that determine whether citizens are willing to use bikes as a mode of transportation. The question we will be trying to answer with our project is: In 2018, in Seoul, Korea, what were the strongest environmental predictors of the quantity of bikes rented out each day, and how effectively can those predictors be used to predict the number of bikes rented out in a given day given the environmental conditions of that day? Our dataset [@dataset] contains information on the weather and environmental factors of each hour of each day during 2018. The observations in the data set report on temperature, humidity, windspeed, visibility, dewpoint, solar radiation, snowfall, and rainfall. The dataset [@dataset] also includes observations relating to whether the bike rental facility was functional during that particular day, and whether the given day was a holiday.
+Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the city’s most popular form of public transportation, gaining over 100 million users in 6 and a half years. It became popular as many citizens favored traveling shorter distances by bike rather than taking crowded transit. Amidst the pandemic, users skyrocketed as many people found it a useful means of transportation to avoid crowded public transit [@ajudaily]. While this played a factor in an increase in users, there are still other factors that come into play that determine whether citizens are willing to use bikes as a mode of transportation. The question we will be trying to answer with our project is: In 2018, in Seoul, Korea, what were the strongest environmental predictors of the quantity of bikes rented out each day, and how effectively can those predictors be used to predict the number of bikes rented out in a given day given the environmental conditions of that day? Our dataset [@dataframe] contains information on the weather and environmental factors of each hour of each day during 2018. The observations in the data set report on temperature, humidity, windspeed, visibility, dewpoint, solar radiation, snowfall, and rainfall. The dataset [@dataframe] also includes observations relating to whether the bike rental facility was functional during that particular day, and whether the given day was a holiday.
 
 # Methods & Results
 
@@ -22,7 +22,7 @@ source(here::here("R/eda_and_splitting.R"))
 ```
 
 ```{r bike-data-table, out.width="100%", out.height="75%"}
-bike_data <- read_csv(here::here("output/bike_data.csv"))
+
 knitr::kable(head(bike_data), caption = "Original Bike Data")
 ```
 
@@ -31,7 +31,7 @@ Table \@ref(tab:bike-data-table) presents the original bike share data from the 
 Next, we wrangle our data into tidy format and group the number of rented bikes by day. This produces a table of our clean data which includes the 8 different environmental factors that we wish to explore.
 
 ```{r bike-data-clean-table, out.width="100%", out.height="75%"}
-bike_data_clean <- read_csv(here::here("output/bike_data_clean.csv"))
+
 knitr::kable(head(bike_data_clean), caption = "Clean Bike Data")
 ```
 
@@ -65,7 +65,7 @@ From Figure \@ref(fig:bike-cor), we note that temperature, solar radiation, and 
 
 Now that we have identified the environmental factors that have the greatest correlation with bike count, we can begin to construct our models. We want to compare linear regression and K-NN regression models to guage which model is most accurate. We will begin with linear regression.
 
-For our first linear regression model, we use temperature as the sole predictor. We find that the RMSE value, which is the root mean squared error for the training data, is `r format(round(lm_rmse_1,2))`. The RMSPE value, which is the root mean squared prediction error for the testing data, is `r format(round(lm_rmspe_1,2))`. This tells us that the average error of our model when predicting the number of bikes per day based on temperature is around 6819. To better understand the model, we plot the data as a scatter plot with the best fit line. The equation for the line of best fit is $y$ = `r format(round(intercept_1,2))` + `r format(round(slope_1, 2))`$x_1$, where $y$ = number of bikes rented per day, and $x_1$ = temperature (°C).
+For our first linear regression model, we use temperature as the sole predictor. We find that the RMSE value, which is the root mean squared error for the training data, is `r format(round(lm_rmse_1,2))`. The RMSPE value, which is the root mean squared prediction error for the testing data, is `r format(round(lm_rmspe_1,2))`. This tells us that the average error of our model when predicting the number of bikes per day based on temperature is around `r format(round(lm_rmspe_1,0))`. To better understand the model, we plot the data as a scatter plot with the best fit line. The equation for the line of best fit is $y$ = `r format(round(intercept_1,2))` + `r format(round(slope_1, 2))`$x_1$, where $y$ = number of bikes rented per day, and $x_1$ = temperature (°C).
 
 ```{r lm-plot-1, fig.cap="Linear regression model with temperature as predictor", out.width="60%"}
 
