@@ -1,5 +1,6 @@
 .PHONY: all 
-all: analysis/bike_share_analysis.Rmd
+all:
+	analysis/bike_share_analysis.Rmd
 
 .PHONY: report
 report: 
@@ -26,7 +27,7 @@ clean:
 # render R Markdown report in HTML and PDF
 #analysis/bike_share_analysis.html analysis/bike_share_analysis.pdf: analysis/bike_share_analysis.Rmd analysis/references.bib
 #	Rscript -e "rmarkdown::render('analysis/bike_share_analysis.Rmd', c('bookdown::html_document2', 'bookdown::pdf_document2'))"
-z
+
 
 # clean
 #clean:
