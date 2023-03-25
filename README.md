@@ -20,7 +20,7 @@ We use a Docker container image to make the computational environment for this p
 Create an account and open the docker application.
 Follow the steps below to interactively run the following commands:
 
-`docker pull jennalenoble/dsci-310-group-09:v0.0.2`
+`docker pull jennalenoble/dsci-310-group-09:latest`
 
 Then using the code below to install required dependencies on your local machine:
 
