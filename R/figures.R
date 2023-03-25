@@ -79,3 +79,5 @@ knn_bike_count_solar_rad <- scatter_plot(bike_preds_2,
             mapping = aes(x = solar_radiation, y = .pred), color = "blue")
 
 ggsave("output/knn_bike_count_solar_rad.png", knn_bike_count_solar_rad)
+
+
