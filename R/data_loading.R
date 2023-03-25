@@ -16,7 +16,8 @@ library(knitr)
 
 opt <- docopt(doc)
 main <- function(url, out_dir) {
-  bike_data <- read_csv(url)
+  bike_data <- read_csv(url, 
+                        locale=locale(encoding="latin1"))
   write_csv(bike_data, paste0(out_dir, "/bike_data.csv"))
 }
 
