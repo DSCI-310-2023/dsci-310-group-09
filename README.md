@@ -18,21 +18,19 @@ The analysis report can be found [here](https://github.com/jennalenoble/dsci-310
 
 We use a Docker container image to make the computational environment for this project reproducible. Download docker application at the link: https://hub.docker.com
 Create an account and open the docker application.
-Follow the steps below to interactively run the following commands:
+Follow the steps below to interactively run and explore the project in RStudio:
 
-`docker pull jennalenoble/dsci-310-group-09:latest`
-
-Then using the code below to install required dependencies on your local machine:
-
-`docker run --rm -it -p 8787:8787 -v /$(pwd):/home/jovyan/work jennalenoble/dsci-310-group-09:latest`
-
-Afterwards, your local machine will assign you a unique password.
-If you want to set your own password, run with:
-`docker run -e PASSWORD=<YOUR_PASS> -p 8787:8787 rocker/rstudio`
-
-
-
-
+* Clone this GitHub repository by clicking the green `code` button, copy the url that looks like `https://github.com/jennalenoble/dsci-310-group-09.git`, and run `git clone <url>` in terminal.
+* Navigate to the root of this project by running `cd dsci-310-group-09` in terminal.
+* Run the command in your terminal: ```docker run -p 8787:8787 --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest```
+ * Note: run the project interactively by using -it: e.g. ```docker run -it --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest```.
+ * Note: if running in Windows terminal, the command should be ```docker run --rm -it -v /$(pwd):<PATH_ON_CONTAINER> <IMAGE_NAME>```. If running in Power Shell then the command should be ```docker run --rm -it -v <ABSOLUTE_PATH_TO_CONTAINER>:<PATH_ON_CONTAINER> <IMAGE_NAME>``` and the path should be formatted like `C:\Users\tiffany.timbers\Documents\project\:/home/project`.
+* Copy the password that is given in the terminal.
+* Open a new web browser and go to `localhost:8787`.
+* Use `rstudio` as the username and the copied passcode from terminal as the password to sign in.
+* Open the `work` folder to navigate to the project root folder.
+* Run `make all` in terminal to run the entire analysis pipeline.
+* Run `make report` in terminal to render the analysis as an html file found in the analysis folder. 
  
 ## Dependencies
 
@@ -45,6 +43,10 @@ R-packages:
 * kknn 1.3.1
 * testthat 3.1.7
 * ggcheck 0.0.4
+* here 1.0.1
+* knitr 1.42
+* bookdown 0.33
+* tinytex 0.44
 
 ## License 
 
