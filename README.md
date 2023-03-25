@@ -16,15 +16,18 @@ The analysis report can be found [here](https://github.com/jennalenoble/dsci-310
 
 ## Usage
 
-We use a Docker container image to make the computational environment for this project reproducible. Download docker application at the link: https://hub.docker.com
-Create an account and open the docker application.
+We use a Docker container image to make the computational environment for this project reproducible. Download docker application [here] (https://hub.docker.com). Create an account and open the docker application.
+
 Follow the steps below to interactively run and explore the project in RStudio:
 
 * Clone this GitHub repository by clicking the green `code` button, copy the url that looks like `https://github.com/jennalenoble/dsci-310-group-09.git`, and run `git clone <url>` in terminal.
 * Navigate to the root of this project by running `cd dsci-310-group-09` in terminal.
-* Run the command in your terminal: ```docker run -p 8787:8787 --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest```
- * Note: run the project interactively by using -it: e.g. ```docker run -it --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest```.
- * Note: if running in Windows terminal, the command should be ```docker run --rm -it -v /$(pwd):<PATH_ON_CONTAINER> <IMAGE_NAME>```. If running in Power Shell then the command should be ```docker run --rm -it -v <ABSOLUTE_PATH_TO_CONTAINER>:<PATH_ON_CONTAINER> <IMAGE_NAME>``` and the path should be formatted like `C:\Users\tiffany.timbers\Documents\project\:/home/project`.
+* Run the command in your terminal: 
+
+```docker run -p 8787:8787 --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest```
+
+  * Note: run the project interactively by using -it: e.g. ```docker run -it --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest```.
+  * Note: if running in Windows terminal, the command should be ```docker run --rm -it -v /$(pwd):<PATH_ON_CONTAINER> <IMAGE_NAME>```. If running in Power Shell then the command should be ```docker run --rm -it -v <ABSOLUTE_PATH_TO_CONTAINER>:<PATH_ON_CONTAINER> <IMAGE_NAME>``` and the path should be formatted like `C:\Users\tiffany.timbers\Documents\project\:/home/project`.
 * Copy the password that is given in the terminal.
 * Open a new web browser and go to `localhost:8787`.
 * Use `rstudio` as the username and the copied passcode from terminal as the password to sign in.
