@@ -21,7 +21,8 @@ source(here::here("R/knn_regression_analysis.R"))
 source(here::here("R/eda_and_splitting.R"))
 ```
 
-```{r bike-data-table, out.wdith="75%", out.height="75%"}
+```{r bike-data-table, out.width="100%", out.height="75%"}
+bike_data <- read_csv(here::here("output/bike_data.csv"))
 knitr::kable(head(bike_data), caption = "Original Bike Data")
 ```
 
@@ -29,7 +30,8 @@ Table \@ref(tab:bike-data-table) presents the original bike share data from the 
 
 Next, we wrangle our data into tidy format and group the number of rented bikes by day. This produces a table of our clean data which includes the 8 different environmental factors that we wish to explore.
 
-```{r bike-data-clean-table}
+```{r bike-data-clean-table, out.width="100%", out.height="75%"}
+bike_data_clean <- read_csv(here::here("output/bike_data_clean.csv"))
 knitr::kable(head(bike_data_clean), caption = "Clean Bike Data")
 ```
 
