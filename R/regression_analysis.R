@@ -1,11 +1,8 @@
 source(here::here("R/eda_and_splitting.R"))
 
 "
-Usage: R/train_regression_model.R --train=<train> --out_dir=<out_dir>
+Usage: R/train_regression_model.R --train=<train_data> --out_dir=<out_dir>
 
-Options:
---data=<data>         Path to training data 
---out_dir=<out_dir>   Path to test model 
 " -> doc
 
 library(tidyverse)
@@ -14,8 +11,8 @@ library(kknn)
 library(docopt)
 
 opt <- docopt(doc)
-main <- function(data, out_dir) {
-    bike_training <- read.csv(train)
+main <- function(train_data, out_dir) {
+    bike_training <- read.csv(train_data)
     
     
     set.seed(1000)
@@ -213,5 +210,5 @@ main <- function(data, out_dir) {
     saveRDS(ln_knn_model, file = paste0(out_dir, "/ln_knn_model.rds"))
 }
 
-main(opt[["--data"]], opt[["--out_dir"]])
+main(opt[["--train_data"]], opt[["--out_dir"]])
 
