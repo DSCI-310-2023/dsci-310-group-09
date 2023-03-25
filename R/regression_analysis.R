@@ -210,7 +210,7 @@ main <- function(data, out_dir) {
         add_model(bike_best_spec_3) |>
         fit(data = bike_training)
     
-    saveRDS(ln_knn_model, file = paste(out_dir, "/ln_knn_model.rds"))
+    saveRDS(ln_knn_model, file = paste0(out_dir, "/ln_knn_model.rds"))
 }
 
 main(opt[["--data"]], opt[["--out_dir"]])
