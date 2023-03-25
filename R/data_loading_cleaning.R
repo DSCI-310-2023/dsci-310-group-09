@@ -15,7 +15,6 @@ options(repr.matrix.max.rows = 10)
 #original data
 bike_data <- read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/00560/SeoulBikeData.csv", 
                                locale=locale(encoding="latin1"))
-write_csv(bike_data, "output/bike_data.csv")
 
 #clean data
 colnames(bike_data) <- c("date", "bike_count", "hour", "temperature", "humidity", "wind_speed", "visibility", "dew_point_temp", "solar_radiation", "rainfall", "snowfall", "seasons", "holiday", "functioning_day") 
@@ -35,7 +34,6 @@ bike_data_clean <- bike_data |>
   select(-date)
 
 
-write_csv(bike_data_clean, "output/bike_data_clean.csv")
 
 
 
