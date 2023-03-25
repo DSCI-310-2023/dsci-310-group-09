@@ -33,7 +33,7 @@ main <- function(input, out_dir){
     ggtitle("Predictor Correlations") +
     theme(text = element_text(size = 12))
   
-  ggsave("output/bike_correlations_ggpairs.png", bike_correlations_ggpairs)
+  ggsave("results/bike_correlations_ggpairs.png", bike_correlations_ggpairs)
   
 }
 
