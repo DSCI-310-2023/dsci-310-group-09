@@ -1,9 +1,9 @@
 "
-Download the data file from the web to the local filepath as a csv file format.
+Download the data file from the web into csv file format and load libaries.
 Usage: R/data_loading.R --url=<url> --out_dir=<out_dir>
 Options:
---url=<url>           URL from where to download the data
---out_dir=<out_dir>   Path(including filename) of where to write the file locally
+--url=<url>           URL from where data is downloaded from
+--out_dir=<out_dir>   Path of where to write the file locally
 " -> doc
 
 library(docopt)
@@ -16,8 +16,8 @@ library(knitr)
 
 opt <- docopt(doc)
 main <- function(url, out_dir) {
-  data <- read_delim(url, ";")
-  write_csv(data, paste0(out_dir, "/raw_bike_data.csv"))
+  bike_data <- read_csv(url)
+  write_csv(bike_data, paste0(out_dir, "/bike_data.csv"))
 }
 
 main(opt[["--url"]], opt[["--out_dir"]])
