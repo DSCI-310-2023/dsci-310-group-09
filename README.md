@@ -24,7 +24,11 @@ Follow the steps below to interactively run the following commands:
 
 Then using the code below to install required dependencies on your local machine:
 
-`docker run --rm -it -p 8787:8787 -v /$(pwd):/home/jovyan/work jennalenoble/dsci-310-group-09:v0.0.2`
+`docker run --rm -it -p 8787:8787 -v /$(pwd):/home/jovyan/work jennalenoble/dsci-310-group-09:latest`
+
+Afterwards, your local machine will assign you a unique password.
+If you want to set your own password, run with:
+`docker run -e PASSWORD=<YOUR_PASS> -p 8787:8787 rocker/rstudio`
 
 
 
