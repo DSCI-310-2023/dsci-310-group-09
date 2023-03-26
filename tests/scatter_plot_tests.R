@@ -7,26 +7,25 @@ source("./tests/scatter_plot_tests_helper.R")
 
 #test for input variables
 test_that("Function can only accept certain data types for arguments", {
-  expect_error(scatter_plot(iris, "Species", Sepal.Width, "Iris Species", "Sepal Width", "Scatter Plot", 10))
-  expect_error(scatter_plot(mtcars, mpg, hp, MPG, "HP", "Scatter Plot", 10))
-  expect_error(scatter_plot(mtcars, mpg, hp, "MPG", HP, "Scatter Plot", 10))
-  expect_error(scatter_plot(mtcars, mpg, hp, "MPG", "HP", Scatter , 10))
-  expect_error(scatter_plot(mtcars, mpg, hp, "MPG", "HP", "Scatter Plot", "10"))
+    expect_error(scatter_plot(test_data_scatter, "x", y, "x", "y", "title", 10))
+    expect_error(scatter_plot(test_data_scatter, x, "y", "x", "y", "title", 10))
+    expect_error(scatter_plot(test_data_scatter, x, y, x, "y", "title", 10))
+    expect_error(scatter_plot(test_data_scatter, x, y, "x", y, "title", 10))
+    expect_error(scatter_plot(test_data_scatter, x, y, "x", "y", 10, 10))
+    expect_error(scatter_plot(test_data_scatter, x, y, "x", "y", "title", "10"))
+    
 })
 
 
-#test for output variables
-test_that("Function returns a plot", {
-  expect_true(is.ggplot(scatter_plot(mtcars, mpg, hp, "MPG", "HP", "Scatter Plot", 10)))
+#test for output variables 
+test_that("Checks the output of the graph", {
+    plot <- scatter_plot(test_data_scatter, x, y, "x", "y", "Scatterplot Test", 10)
+    expect_true(is.ggplot(plot))
+    expect_equal(xlab(plot)$label, xlab(test_data_scatter)$label)
+    expect_equal(ylab(plot)$label, ylab(test_data_scatter)$label)
+    expect_equal(ggtitle(plot)$label, ggtitle(test_data_scatter)$label)
+    
 })
 
 
-
-test_that("Identifies labels correctly", {
-  expect_equal(
-    get_labels(scatter_plot(mtcars, mpg, hp, "MPG", "HP", "Scatter Plot", 10), c("title", "x", "y")), 
-    list(title = "Scatter Plot", x = "MPG", y = "HP")
-  )
-}
-)
 

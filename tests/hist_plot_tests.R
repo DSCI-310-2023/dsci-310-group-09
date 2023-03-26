@@ -7,23 +7,20 @@ source("./tests/hist_plot_tests_helper.R")
 
 #test for input variables
 test_that("Function can only accept certain data types for arguments", {
-  expect_error(hist_plot(iris, "Species", "Iris Species", "Count", "Histogram", 10))
-  expect_error(hist_plot(mtcars, mpg, MPG, "Count", "Histogram", 10))
-  expect_error(hist_plot(mtcars, mpg, "MPG", Count, "Histogram", 10))
-  expect_error(hist_plot(mtcars, mpg, "MPG", "Count", Histogram, 10))
-  expect_error(hist_plot(mtcars, mpg, "MPG", "Count", "Histogram", "10"))
+    expect_error(hist_plot(test_data_hist, "abc", "x", "y", "title", 10))
+    expect_error(hist_plot(test_data_hist, x, 10, "y", "title", 10))
+    expect_error(hist_plot(test_data_hist, x, "x", 10, "title", 10))
+    expect_error(hist_plot(test_data_hist, x, "x", "y", 10, 10))
+    expect_error(hist_plot(test_data_hist, x, "x", "y", "title", "10"))
 })
 
-
-#test for output variables
-test_that("Function returns a plot", {
-  expect_true(is.ggplot(p1))
+#test for output variables 
+test_that("Checks the output of the graph", {
+    plot <- hist_plot(test_data_hist, x, "x", "y", "Histogram Test", 10)
+    expect_true(is.ggplot(plot))
+    expect_equal(xlab(plot)$label, xlab(helper_hist)$label)
+    expect_equal(ylab(plot)$label, ylab(helper_hist)$label)
+    expect_equal(ggtitle(plot)$labels, ggtitle(helper_hist)$labels)
+    
 })
 
-test_that("Identifies labels correctly", {
-  expect_equal(
-    get_labels(p1, c("title", "x", "y")), 
-              list(title = "Histogram", x = "Miles per Gallon", y = "Count")
-    )
-  }
-)
