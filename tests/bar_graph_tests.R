@@ -2,8 +2,8 @@ library(testthat)
 library(tidyverse)
 library(ggcheck)
 
-source("./R/bar_graph.R")
-source("./tests/bar_graph_tests_helper.R")
+source(here::here("R/functions/bar_graph.R"))
+source(here::here("tests/bar_graph_test_helper.R"))
 
 #test for input variables
 test_that("Function can only accept certain data types for arguments", {

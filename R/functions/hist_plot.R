@@ -5,13 +5,13 @@
 #' This function takes in a dataset, a variable x from the dataset, an x-axis label, a y-axis label, a title for the plot and the text size.
 #' 
 #' @param data The dataset that contains the x variable.
-#' @param x The name of the numerical variable that will be on the x-axis of the histogram.
+#' @param var The name of the numerical variable that will be on the x-axis of the histogram.
 #' @param xlab The label of the x-axis.
 #' @param ylab The label of the y-xis.
 #' @param title The title of the histogram plot.
 #' @param text_size The size of the plot's text.
 #' 
-#' @return A histogram plot for given numerical variable, x
+#' @return A histogram plot for given numerical variable
 #' 
 #' @examples 
 #' # hist_plot(mtcars, mpg, "Miles Per Gallon", "Count", "Histogram for MPG of Cars", 10)
@@ -19,7 +19,11 @@
 
 hist_plot <- function(data, var, xlab, ylab, title, text_size){
   x = dplyr::pull(data, {{var}})
-  if(!is.numeric(x)){
+  if (!is.data.frame(data)){
+    stop("Parameter data must be a dataframe")
+  }
+  
+  else if (!is.numeric(x)){
     stop("Variable x must be a numerical variable.")}
   
   else if(!is.character(xlab)){
