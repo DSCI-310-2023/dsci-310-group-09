@@ -1,17 +1,28 @@
-source(here::here("R/data_loading_cleaning.R"))
-source(here::here("R/functions/summarize_column.R"))
-
 "
-Usage: R/train_regression_model.R <data> <out_dir>
-
+Split training and testing data.
+Usage: R/scripts/splitting.R --data=<data> --out_dir=<out_dir> 
+Options:
+--data=<data>         Path to clean data
+--out_dir=<out_dir>   Path to directory where training/testing sets should be saved
 " -> doc
 
+source(here::here("R/functions/summarize_column.R"))
+
+library(docopt)
+library(tidyverse)
+library(tidymodels)
+library(GGally)
+library(kknn)
+library(here)
+library(knitr)
+library(bookdown)
+library(tinytex)
 
 set.seed(2020)
 
 opt <- docopt(doc)
 main <- function(data, out_dir){
-    bike_data_clean <- read.csv(data)
+    bike_data_clean <- read_csv(data)
     
     #split training and testing data
     bike_split <- initial_split(bike_data_clean, prop = 0.7, strata = bike_count)

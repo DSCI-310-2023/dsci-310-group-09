@@ -13,6 +13,8 @@ library(GGally)
 library(kknn)
 library(here)
 library(knitr)
+library(bookdown)
+library(tinytex)
 
 opt <- docopt(doc)
 main <- function(url, out_dir) {
