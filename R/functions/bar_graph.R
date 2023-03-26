@@ -21,6 +21,10 @@
 #'
 bar_graph <- function(df, x, y, xlab, ylab, fill_lab, title) {
   
+  if(!is.data.frame(df)) {
+    stop("Parameter df must be a dataframe")
+  }
+  
   if(!is.factor(x)) {
     stop("Please pass me a discrete variable") 
     } else if (!is.numeric(y)) {

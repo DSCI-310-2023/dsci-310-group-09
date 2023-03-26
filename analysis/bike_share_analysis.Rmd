@@ -16,12 +16,13 @@ Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the cit
 ```{r include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 source(here::here("R/data_loading_cleaning.R"))
+source(here::here("R/eda_and_splitting.R"))
 source(here::here("R/linear_regression_analysis.R"))
 source(here::here("R/knn_regression_analysis.R"))
-source(here::here("R/eda_and_splitting.R"))
+source(here::here("R/figures.R"))
 ```
 
-```{r bike-data-table, out.width="100%", out.height="75%"}
+```{r bike-data-table, out.width="75%", out.height="75%"}
 
 knitr::kable(head(bike_data), caption = "Original Bike Data")
 ```

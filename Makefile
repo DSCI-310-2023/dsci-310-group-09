@@ -23,7 +23,8 @@ report:
 
 .PHONY: clean
 clean: 
-	rm -f analysis/bike_share.html 
+	rm -f analysis/bike_share.html
+	rm -rf analysis/output
 
 
 

@@ -7,6 +7,7 @@ source(here::here("tests/bar_graph_test_helper.R"))
 
 #test for input variables
 test_that("Function can only accept certain data types for arguments", {
+    expect_error(bar_graph(c(1,0,0), c(2,1), c(1,2), "x", "y", "x", "title"))
     expect_error(bar_graph(test_data, y, y, "x", "y", "x", "title"))
     expect_error(bar_graph(test_data, x, x, "x", "y", "x", "title"))
     expect_error(bar_graph(test_data, x, y, 100, "y", "x","title"))
