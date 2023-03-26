@@ -7,7 +7,7 @@ source(here::here("tests/hist_plot_tests_helper.R"))
 
 #test for input variables
 test_that("Function can only accept certain data types for arguments", {
-    expect_error(hist_plot(c(3,2,1), "abc", "x", "y", "title", 10))
+    expect_error(hist_plot(c(3,2,1), c(1,1), "x", "y", "title", 10))
     expect_error(hist_plot(test_data_hist, "abc", "x", "y", "title", 10))
     expect_error(hist_plot(test_data_hist, x, 10, "y", "title", 10))
     expect_error(hist_plot(test_data_hist, x, "x", 10, "title", 10))
