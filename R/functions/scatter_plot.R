@@ -8,8 +8,8 @@
 #' a title for the plot and the text size.
 #'
 #' @param data A data frame 
-#' @param x the y variable in the relationship 
-#' @param y the variable y in the relationship 
+#' @param var1 the y variable in the relationship 
+#' @param var2 the variable y in the relationship 
 #' @param xlab the label of the x-axis 
 #' @param ylab the label of the y-axis
 #' @param title the title of the scatter plot with the regression line
@@ -27,7 +27,11 @@
 scatter_plot <- function(data,var1,var2,xlab,ylab,title,text_size){
   x = dplyr::pull(data, {{var1}})
   y = dplyr::pull(data, {{var2}})
-  if(!is.numeric(x)){
+  if (!is.data.frame(data)){
+    stop("Parameter data must be a dataframe.")
+  }
+  
+  else if(!is.numeric(x)){
     stop("Please put in a numeric variable for x.")
     }
   else if(!is.numeric(y)){

@@ -10,3 +10,7 @@ helper_scatter <- ggplot(test_data_scatter,aes(x=x,y=y)) +
                   ggtitle("Scatterplot Test")+
                   theme(text=element_text(size=10))
 helper_scatter
+
+test_data_scatter2 <- data.frame(x = c("blue", "red", "yellow"), y = c(3,2,1))
+
+test_data_scatter3 <- data.frame(x = c(1,1,1), y = c("yes", "no", "yes"))
