@@ -6,6 +6,10 @@ Options:
 --out_dir=<out_dir>   Path to clean data
 " -> doc
 
+library(docopt)
+library(tidyverse)
+library(tidymodels)
+
 opt <- docopt(doc)
 main <- function(input, out_dir){
   
@@ -40,7 +44,7 @@ main <- function(input, out_dir){
               snowfall = mean(snowfall)) |>
     select(-date)
   
-  write_csv(bike_data, paste0(out_dir, "/bike_data_clean.csv"))
+  write_csv(bike_data_clean, paste0(out_dir, "/bike_data_clean.csv"))
 }
 
 main(opt[["--input"]], opt[["--out_dir"]])
