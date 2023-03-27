@@ -65,5 +65,25 @@ clean:
 	rm -f data/bike_data_clean.csv
 	rm -f data/bike_training.csv
 	rm -f data/bike_testing.csv
-	rm -rf results
+	rm -f results/bike_correlations_ggpairs.png
+	rm -f results/bike_count_barplot.png
+	rm -f results/bike_histogram.png
+	rm -f results/intercept_1.rds
+	rm -f results/intercept_2.rds
+	rm -f results/intercept_3.rds
+	rm -f results/k_min.rds
+	rm -f results/knn_model.rds
+	rm -f results/knn_rmspe.rds
+	rm -f results/lm1_model.rds
+	rm -f results/lm2_model.rds
+	rm -f results/lm_bike_count_solar_rad.png
+	rm -f results/lm_bike_count_temp.png
+	rm -f results/lm_model.rds
+	rm -f results/lm_rmspe.rds
+	rm -f results/lm_rmspe_1.rds
+	rm -f results/lm_rmspe_2.rds
+	rm -f results/slope_1.rds
+	rm -f results/slope_2.rds
+	rm -f results/slope_3_sol_rad.rds
+	rm -f results/slope_3_temp.rds
 	rm -rf analysis/bike_share_analysis.html
