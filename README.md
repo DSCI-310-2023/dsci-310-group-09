@@ -31,9 +31,11 @@ Follow the steps below to run and explore the project in RStudio:
 * Copy the password that is given in the terminal.
 * Open a new web browser and go to `localhost:8787`.
 * Use `rstudio` as the username and the copied passcode from terminal as the password to sign in.
-* Open the `work` folder and navigate to `analysis/bike_share_analysis.Rmd`.
+* Open the `work` folder to navigate to the project folder
+* Run `make all` to run the entire analysis pipeline in terminal and render an html file of the report found in `analysis/bike_share_analysis.html`.
+    * Note: run `make clean` to easily “undo” the analysis (e.g., delete all generate data and files).
+* To run the analysis in Rstudio, navigate to `analysis/bike_share_analysis.Rmd`.
 * Click the arrow drop down beside `run` and select `Restart R and Run All Chunks` to reproduce the results.
-    * Note: You can also run `make all` in terminal to run the entire analysis pipeline in terminal, and/or run `make report` to render the analysis as an html file found in the analysis folder.
  
 ## Dependencies
 
@@ -50,6 +52,7 @@ R-packages:
 * knitr 1.42
 * bookdown 0.33
 * tinytex 0.44
+* docopt 0.7.1
 
 ## License 
 
