@@ -1,8 +1,8 @@
-# Histogram Plot
+# Bar Graph 
 
-#' Create a histogram for a given variable
+#' Create a bar graph for a given variable
 #' 
-#' This function takes in a dataset, a variable x from the dataset, an x-axis label, a y-axis label, a title for the plot and the text size.
+#' This function takes in a dataset, a variable x from the dataset, a variable y from the dataset, an x-axis label, a y-axis label, a fill label, and a title for the plot 
 #' 
 #' @param data The dataset that contains the x variable.
 #' @param x The name of the discrete variable that will be on the x-axis of the bar graph. 
