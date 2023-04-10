@@ -12,7 +12,7 @@ The data we used to build our models was gathered in 2017 and 2018 in Seoul, Kor
 
 ## Report 
 
-The analysis report can be found [here](https://github.com/jennalenoble/dsci-310-group-09/blob/main/analysis/bike_share_analysis.ipynb).
+The analysis report can be found [here](https://github.com/jennalenoble/dsci-310-group-09/blob/main/analysis/bike_share_analysis.Rmd).
 
 ## Usage
 
@@ -24,15 +24,28 @@ Follow the steps below to run and explore the project in RStudio:
 * Navigate to the root of this project by running `cd dsci-310-group-09` in terminal.
 * Run the following command in your terminal: 
 
-  ```docker run -p 8787:8787 --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest```
+  ``` 
+  docker run -p 8787:8787 --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest
+  ```
 
-    * Note: run the project interactively by using `-it`: e.g. ```docker run -it --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest```.
-    * Note: if running in Windows terminal, the command should be ```docker run --rm -it -v /$(pwd):<PATH_ON_CONTAINER> <IMAGE_NAME>```. If running in Power Shell then the command should be ```docker run --rm -it -v <ABSOLUTE_PATH_TO_CONTAINER>:<PATH_ON_CONTAINER> <IMAGE_NAME>``` and the path should be formatted like `C:\Users\tiffany.timbers\Documents\project\:/home/project`.
+    * Note: run the project interactively by using `-it`: e.g. 
+    ```
+    docker run -it --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest
+    ```
+    * Note: if running in Windows terminal, the command should be 
+    ```
+    docker run --rm -it -v /$(pwd):<PATH_ON_CONTAINER> <IMAGE_NAME>
+    ```
+    If running in Power Shell then the command should be 
+    ```
+    docker run --rm -it -v <ABSOLUTE_PATH_TO_CONTAINER>:<PATH_ON_CONTAINER> <IMAGE_NAME>
+    ``` 
+    and the path should be formatted like `C:\Users\tiffany.timbers\Documents\project\:/home/project`.
 * Copy the password that is given in the terminal.
 * Open a new web browser and go to `localhost:8787`.
 * Use `rstudio` as the username and the copied passcode from terminal as the password to sign in.
-* Open the `work` folder to navigate to the project folder
-* Run `make all` to run the entire analysis pipeline in terminal and render an html file of the report found in `analysis/bike_share_analysis.html`.
+* Navigate to the root project folder using `cd` in RStudio terminal.
+* Run `make all` in Rstudio's terminal to run the entire analysis pipeline and render an html file of the report found in `analysis/bike_share_analysis.html`.
     * Note: run `make clean` to easily “undo” the analysis (e.g., delete all generate data and files).
 * To run the analysis in Rstudio, navigate to `analysis/bike_share_analysis.Rmd`.
 * Click the arrow drop down beside `run` and select `Restart R and Run All Chunks` to reproduce the results.
@@ -46,13 +59,12 @@ R-packages:
 * tidymodels 1.0.0
 * GGally 2.1.2
 * kknn 1.3.1
-* testthat 3.1.7
-* ggcheck 0.0.4
 * here 1.0.1
 * knitr 1.42
 * bookdown 0.33
 * tinytex 0.44
 * docopt 0.7.1
+* ln.knn.regression 0.0.0.9000
 
 ## License 
 
