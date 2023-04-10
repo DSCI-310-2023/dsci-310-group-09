@@ -18,7 +18,6 @@ Bike sharing in Seoul, Korea was founded in 2015 and has grown to become the cit
 library(tidyverse)
 library(tidymodels)
 library(GGally)
-library(kknn)
 library(here)
 library(knitr)
 library(bookdown)
