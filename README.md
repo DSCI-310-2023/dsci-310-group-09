@@ -32,11 +32,11 @@ Follow the steps below to run and explore the project in RStudio:
     ```
     docker run -it --rm -v /$(pwd):/home/rstudio/work jennalenoble/dsci-310-group-09:latest
     ```
-    * Note: if running in Windows terminal, the command should be 
+    * Note: if running in Windows terminal, the command should be:
     ```
     docker run --rm -it -v /$(pwd):<PATH_ON_CONTAINER> <IMAGE_NAME>
     ```
-    If running in Power Shell then the command should be 
+    If running in Power Shell then the command should be: 
     ```
     docker run --rm -it -v <ABSOLUTE_PATH_TO_CONTAINER>:<PATH_ON_CONTAINER> <IMAGE_NAME>
     ``` 
@@ -47,7 +47,7 @@ Follow the steps below to run and explore the project in RStudio:
 * Navigate to the root project folder using `cd` in RStudio terminal.
 * Run `make all` in Rstudio's terminal to run the entire analysis pipeline and render an html file of the report found in `analysis/bike_share_analysis.html`.
     * Note: run `make clean` to easily “undo” the analysis (e.g., delete all generate data and files).
-* To run the analysis in Rstudio, navigate to `analysis/bike_share_analysis.Rmd`.
+* To run the analysis in Rstudio, open `ln.knn.regression.Rproj` project to set the working directory, then navigate to `analysis/bike_share_analysis.Rmd`.
 * Click the arrow drop down beside `run` and select `Restart R and Run All Chunks` to reproduce the results.
  
 ## Dependencies
@@ -58,7 +58,6 @@ R-packages:
 * tidyverse 1.3.2
 * tidymodels 1.0.0
 * GGally 2.1.2
-* kknn 1.3.1
 * here 1.0.1
 * knitr 1.42
 * bookdown 0.33
