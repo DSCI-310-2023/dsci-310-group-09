@@ -8,6 +8,7 @@ Options:
 library(docopt)
 library(tidyverse)
 library(tidymodels)
+library(ln.knn.regression)
 
 opt <- docopt(doc)
 main <- function(train_data, out_dir) {
@@ -15,19 +16,11 @@ main <- function(train_data, out_dir) {
   # Load training data
   bike_training <- read_csv(train_data)
   
-  # Create lm spec
-  lm_spec <- linear_reg() |>
-    set_engine("lm") |>
-    set_mode("regression")
-  
   # Create recipe
   bike_recipe <- recipe(bike_count ~ temperature + solar_radiation, data = bike_training)
   
   # Create model
-  lm_model <- workflow() |>
-    add_recipe(bike_recipe) |>
-    add_model(lm_spec) |>
-    fit(data = bike_training)
+  lm_model <- linearmodel(bike_recipe, bike_training)
   
   # Extract intercept + slope
   intercept_3 <- lm_model |>

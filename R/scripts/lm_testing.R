@@ -9,6 +9,7 @@ Options:
 library(docopt)
 library(tidyverse)
 library(tidymodels)
+library(ln.knn.regression)
 
 opt <- docopt(doc)
 main <- function(test_data, out_dir){
@@ -20,13 +21,7 @@ main <- function(test_data, out_dir){
   lm_model <- readRDS("results/lm_model.rds")
   
   # Find RMSPE value
-  lm_rmspe <- lm_model|>
-    predict(bike_testing) |>
-    bind_cols(bike_testing) |>
-    metrics(truth = bike_count, estimate = .pred) |>
-    filter(.metric == "rmse") |>
-    select(.estimate) |>
-    pull()
+  lm_rmspe <- model_rmspe(lm_model, bike_testing, "bike_count")
   
   # Save RMSPE value
   saveRDS(lm_rmspe, file = paste0(out_dir, "/lm_rmspe.rds"))

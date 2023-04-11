@@ -9,8 +9,7 @@ Options:
 library(docopt)
 library(tidyverse)
 library(tidymodels)
-
-source(here::here("R/functions/scatter_plot.R"))
+library(ln.knn.regression)
 
 opt <- docopt(doc)
 main <- function(test_data, out_dir){
@@ -25,13 +24,7 @@ main <- function(test_data, out_dir){
   bike_training <- read_csv("data/bike_training.csv")
   
   # find rmspe value
-  lm_rmspe_2 <- lm2_model |>
-    predict(bike_testing) |>
-    bind_cols(bike_testing) |>
-    metrics(truth = bike_count, estimate = .pred) |>
-    filter(.metric == "rmse") |>
-    select(.estimate) |>
-    pull()
+  lm_rmspe_2 <- model_rmspe(lm2_model, bike_testing, "bike_count")
   
   # create plot
   lm_bike_count_solar_rad <- scatter_plot(bike_training, 
@@ -39,8 +32,9 @@ main <- function(test_data, out_dir){
                                           bike_count, 
                                           "Solar Radiation (MJ/m2)", 
                                           "Number of Bikes Rented Per Day",     
-                                          "Best Fit Line for Bike Count vs Solar Radiation", 15) +
-    geom_smooth(method = "lm", se = FALSE)
+                                          "Best Fit Line for Bike Count vs Solar Radiation", 
+                                          15, 
+                                          "lm")
   
   
   # Save plot
