@@ -103,4 +103,12 @@ clean:
 	rm -f results/slope_2.rds
 	rm -f results/slope_3_sol_rad.rds
 	rm -f results/slope_3_temp.rds
+	rm -f results/k_min_1.rds
+	rm -f results/k_min_2.rds
+	rm -f results/knn_bike_count_temp.png
+	rm -f results/knn_bike_count_solar_rad.png
+	rm -f results/knn_model_1.rds
+	rm -f results/knn_model_2.rds
+	rm -f results/knn_rmspe_1.rds
+	rm -f results/knn_rmspe_2.rds
 	rm -rf analysis/bike_share_analysis.html

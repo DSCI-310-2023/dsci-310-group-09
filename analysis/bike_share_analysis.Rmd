@@ -134,7 +134,7 @@ k_min_1 <- readRDS(here::here("results/k_min_1.rds"))
 knn_rmspe_1 <- readRDS(here::here("results/knn_rmspe_1.rds"))
 ```
 
-This model requires `r k_min_1` neighbors for the lowest error value. It results in an RMSPE value of `r knn_rmspe_1`. Below is a scatter plot that demonstrates the data with the predictive model.
+This model requires `r k_min_1` neighbors for the lowest error value. It results in an RMSPE value of `r format(round(knn_rmspe_1,2))`. Below is a scatter plot that demonstrates the data with the predictive model.
 
 ```{r knn-plot-1, fig.cap="KNN regression model with temperature as predictor", out.width="60%"}
 
@@ -148,7 +148,7 @@ k_min_2 <- readRDS(here::here("results/k_min_2.rds"))
 knn_rmspe_2 <- readRDS(here::here("results/knn_rmspe_2.rds"))
 ```
 
-This model requires `r k_min_2` neighbors for the lowest error value. It results in an RMSPE value of `r knn_rmspe_2`. Below is a scatter plot that demonstrates the data with the predictive model.
+This model requires `r k_min_2` neighbors for the lowest error value. It results in an RMSPE value of `r format(round(knn_rmspe_2,2))`. Below is a scatter plot that demonstrates the data with the predictive model.
 
 ```{r knn-plot-2, fig.cap="KNN regression model with temperature as predictor", out.width="60%"}
 
@@ -160,7 +160,7 @@ knn_rmspe_3 <- readRDS(here::here("results/knn_rmspe.rds"))
 k_min_3 <- readRDS(here::here("results/k_min.rds"))
 ```
 
-For our last KNN model, we used both temperature and solar radiation as predictors. We find that using `r k_min_3` results in an RMSPE value of `r format(round(knn_rmspe_3,2))`. This is the lowest error out of all the models that were built. However, since it uses two predictors, we do not have a scatter plot to demonstrate the model.
+For our last KNN model, we used both temperature and solar radiation as predictors. We find that using `r k_min_3` neighbours results in an RMSPE value of `r format(round(knn_rmspe_3,2))`. This is the lowest error out of all the models that were built. However, since it uses two predictors, we do not have a scatter plot to demonstrate the model.
 
 # Discussion
 
