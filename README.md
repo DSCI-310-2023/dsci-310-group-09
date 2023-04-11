@@ -66,6 +66,8 @@ R-packages:
 * docopt 0.7.1
 * ln.knn.regression 0.0.0.9000
 
+The ln.knn.regression package can be found [here](https://github.com/DSCI-310/dsci-310-group-09-pkg). 
+
 ## License 
 
 This project is offered under the [Attribution 4.0 International (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/). The software provided in this project is offered under the [MIT open source license](https://opensource.org/license/mit/). Refer to the [license file](https://github.com/jennalenoble/dsci-310-group-09/blob/main/LICENSE.md) for more information.
