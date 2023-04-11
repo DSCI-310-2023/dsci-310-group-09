@@ -40,14 +40,27 @@ knitr::kable(head(bike_data_clean), caption = "Clean Bike Data")
 
 Table \@ref(tab:bike-data-clean-table) presents the data in tidy format. The data has been wrangled to group by day instead of by hour.
 
-To further explore our data, we examine the distribution of rented bikes per day with a histogram.
+To further explore our data, we can examine the distribution of rented bikes per day with a histogram.
 
 ```{r bike-hist, fig.cap="Histogram of rented bikes per day", out.width="60%"}
 
 knitr::include_graphics(here::here("results/bike_histogram.png"))
 ```
 
-The distribution in Figure \@ref(fig:bike-hist) shows that the number of rented bikes per day takes on a bimodal shape with two peaks. 
+The distribution in Figure \@ref(fig:bike-hist) shows that the number of rented bikes per day takes on a bimodal shape with two peaks. We can also explore the summary statistics for bike count.
+
+```{r summary-stats, out.width="50%", out.height="50%"}
+bike_stats <- read_csv(here::here("data/bike_stats.csv"))
+mean_value <- bike_stats |>
+  select(mean) |>
+  pull()
+sd_value <- bike_stats |>
+  select(sd) |>
+  pull()
+knitr::kable(head(bike_stats), caption = "Summary Statistics for Bike Count")
+```
+
+From Table \@ref(tab:summary-stats) we can see that there is an average of `r format(mean_value, scientific=FALSE)` bikes rented per day with a standard deviation of `r format(sd_value, scientific=FALSE)`.
 
 Next, we assess the correlation between the amount of bikes rented and of the environmental/weather predictors.
 
@@ -66,6 +79,8 @@ knitr::include_graphics(here::here("results/bike_count_barplot.png"))
 From Figure \@ref(fig:bike-cor), we note that temperature, solar radiation, and dew point temperature have the strongest correlation with bikes rented per day by a large margin. However, we also notice that temperature and dew point temperature are very strongly correlated to each other as shown in Figure \@ref(fig:bike-ggpairs), so including both factors would likely give twice the priority to the temperature that day. Additionally, the correlation coefficient for dew point and bike count is less than 0.7, so it is not a very strong correlation. Therefore, we determine that it would be most appropriate to simply include only temperature and solar radiation as the predictors, since both of their correlation coefficients are above 0.7.
 
 Now that we have identified the environmental factors that have the greatest correlation with bike count, we can begin to construct our models. First we split our data into training set (70%) and testing set (30%). We want to compare linear regression and K-NN regression models to guage which model is most accurate. We will begin with linear regression.
+
+### Linear Regression
 
 ```{r}
 lm_rmspe_1 <- readRDS(here::here("results/lm_rmspe_1.rds"))
@@ -108,14 +123,44 @@ The final linear regression model uses both environmental factors (temperature a
 * $x_1 =$ temperature (°C)
 * $x_2 =$ solar radiation $(MJ/m^2)$
 
-When comparing the 3 different linear regression models, we notice that the RMSPE value for the model with both predictors is lower than the models that use only one predictor. Therefore, the model that uses both predictors is a better model to predict the number of bikes rented per day. As a result, we construct a final model using K Nearest Neighbours that uses both temperature and solar radiation as predictors. 
+### KNN Regression
+
+Now we can compare our linear models with K-NN models, using the same predictors. 
+
+First we will start by using temperature as the sole predictor. 
+
+```{r}
+k_min_1 <- readRDS(here::here("results/k_min_1.rds"))
+knn_rmspe_1 <- readRDS(here::here("results/knn_rmspe_1.rds"))
+```
+
+This model requires `r k_min_1` neighbors for the lowest error value. It results in an RMSPE value of `r knn_rmspe_1`. Below is a scatter plot that demonstrates the data with the predictive model.
+
+```{r knn-plot-1, fig.cap="KNN regression model with temperature as predictor", out.width="60%"}
+
+knitr::include_graphics(here::here("results/knn_bike_count_temp.png"))
+```
+
+For our KNN next model, we use solar radiation as the predictor. 
+
+```{r}
+k_min_2 <- readRDS(here::here("results/k_min_2.rds"))
+knn_rmspe_2 <- readRDS(here::here("results/knn_rmspe_2.rds"))
+```
+
+This model requires `r k_min_2` neighbors for the lowest error value. It results in an RMSPE value of `r knn_rmspe_2`. Below is a scatter plot that demonstrates the data with the predictive model.
+
+```{r knn-plot-2, fig.cap="KNN regression model with temperature as predictor", out.width="60%"}
+
+knitr::include_graphics(here::here("results/knn_bike_count_solar_rad.png"))
+```
 
 ```{r}
 knn_rmspe_3 <- readRDS(here::here("results/knn_rmspe.rds"))
 k_min_3 <- readRDS(here::here("results/k_min.rds"))
 ```
 
-For this model, we find that using `r k_min_3` results in an RMSPE value of `r format(round(knn_rmspe_3,2))`. This is the lowest error out of all the models that were built. 
+For our last KNN model, we used both temperature and solar radiation as predictors. We find that using `r k_min_3` results in an RMSPE value of `r format(round(knn_rmspe_3,2))`. This is the lowest error out of all the models that were built. However, since it uses two predictors, we do not have a scatter plot to demonstrate the model.
 
 # Discussion
 
