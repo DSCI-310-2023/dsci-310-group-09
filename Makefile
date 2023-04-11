@@ -4,7 +4,7 @@
 
 # Run the entire analysis pipeline in terminal
 
-all: data/bike_data.csv data/bike_data_clean.csv results/bike_histogram.png results/bike_correlations_ggpairs.png results/bike_count_barplot.png data/bike_training.csv data/bike_stats.csv data/bike_testing.csv results/lm_model.rds results/intercept_3.rds results/slope_3_temp.rds results/slope_3_sol_rad.rds results/lm_rmspe.rds results/knn_model_3.rds results/k_min.rds results/knn_rmspe.rds results/lm1_model.rds results/slope_1.rds results/intercept_1.rds results/lm_rmspe_1.rds results/lm_bike_count_temp.png results/lm2_model.rds results/slope_2.rds results/intercept_2.rds results/lm_rmspe_2.rds results/lm_bike_count_solar_rad.png analysis/bike_share_analysis.html
+all: data/bike_data.csv data/bike_data_clean.csv results/bike_histogram.png results/bike_correlations_ggpairs.png results/bike_count_barplot.png data/bike_training.csv data/bike_stats.csv data/bike_testing.csv results/lm_model.rds results/intercept_3.rds results/slope_3_temp.rds results/slope_3_sol_rad.rds results/lm_rmspe.rds results/knn_model_1.rds results/k_min_1.rds results/knn_rmspe_1.rds results/knn_bike_count_temp.png results/knn_model_2.rds results/k_min_2.rds results/knn_rmspe_2.rds results/knn_bike_solar_rad.png results/knn_model_3.rds results/k_min.rds results/knn_rmspe.rds results/lm1_model.rds results/slope_1.rds results/intercept_1.rds results/lm_rmspe_1.rds results/lm_bike_count_temp.png results/lm2_model.rds results/slope_2.rds results/intercept_2.rds results/lm_rmspe_2.rds results/lm_bike_count_solar_rad.png analysis/bike_share_analysis.html
 
 # Load data
 data/bike_data.csv:	R/scripts/data_loading.R
@@ -45,12 +45,28 @@ results/lm_model.rds results/intercept_3.rds results/slope_3_temp.rds results/sl
 # Find LM 3 error
 results/lm_rmspe.rds: R/scripts/lm_testing.R data/bike_testing.csv results/lm_model.rds
 	Rscript R/scripts/lm_testing.R --test_data=data/bike_testing.csv --out_dir=results
+
+# Create KNN model 1 
+results/knn_model_1.rds results/k_min_1.rds: R/scripts/knn1_training.R data/bike_training.csv
+	Rscript R/scripts/knn1_training.R --train_data=data/bike_training.csv --out_dir=results
 	
-# Create KNN model
+# Find KNN 1 error
+results/knn_rmspe_1.rds results/knn_bike_count_temp.png: R/scripts/knn1_testing.R data/bike_testing.csv results/knn_model_1.rds
+	Rscript R/scripts/knn1_testing.R --test_data=data/bike_testing.csv --out_dir=results
+	
+# Create KNN model 2 
+results/knn_model_2.rds results/k_min_2.rds: R/scripts/knn2_training.R data/bike_training.csv
+	Rscript R/scripts/knn2_training.R --train_data=data/bike_training.csv --out_dir=results
+	
+# Find KNN 2 error
+results/knn_rmspe_2.rds results/knn_bike_solar_rad.png: R/scripts/knn2_testing.R data/bike_testing.csv results/knn_model_2.rds
+	Rscript R/scripts/knn2_testing.R --test_data=data/bike_testing.csv --out_dir=results
+
+# Create KNN 3 model
 results/knn_model_3.rds results/k_min.rds: R/scripts/knn_training.R data/bike_training.csv
 	Rscript R/scripts/knn_training.R --train_data=data/bike_training.csv --out_dir=results
 	
-# Find KNN error
+# Find KNN 3 error
 results/knn_rmspe.rds: R/scripts/knn_testing.R data/bike_testing.csv results/knn_model_3.rds
 	Rscript R/scripts/knn_testing.R --test_data=data/bike_testing.csv --out_dir=results
 

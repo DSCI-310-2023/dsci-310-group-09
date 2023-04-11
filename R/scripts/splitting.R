@@ -10,11 +10,6 @@ Options:
 library(docopt)
 library(tidyverse)
 library(tidymodels)
-library(GGally)
-library(kknn)
-library(here)
-library(knitr)
-library(bookdown)
 library(tinytex)
 library(ln.knn.regression)
 
