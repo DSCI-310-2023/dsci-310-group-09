@@ -6,12 +6,11 @@ Options:
 --out_dir=<out_dir>   Path to directory where plots should be saved
 " -> doc
 
-source(here::here("R/functions/bar_graph.R"))
-source(here::here("R/functions/hist_plot.R"))
 library(docopt)
 library(GGally)
 library(tidyverse)
 library(tidymodels)
+library(ln.knn.regression)
 
 opt <- docopt(doc)
 main <- function(input, out_dir){

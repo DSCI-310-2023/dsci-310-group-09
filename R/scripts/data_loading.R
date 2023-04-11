@@ -15,6 +15,7 @@ library(here)
 library(knitr)
 library(bookdown)
 library(tinytex)
+library(ln.knn.regression)
 
 opt <- docopt(doc)
 main <- function(url, out_dir) {

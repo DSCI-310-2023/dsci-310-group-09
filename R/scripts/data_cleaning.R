@@ -9,6 +9,7 @@ Options:
 library(docopt)
 library(tidyverse)
 library(tidymodels)
+library(ln.knn.regression)
 
 opt <- docopt(doc)
 main <- function(input, out_dir){
