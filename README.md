@@ -36,11 +36,12 @@ Follow the steps below to run and explore the project in RStudio:
     ```
     docker run --rm -it -v /$(pwd):<PATH_ON_CONTAINER> <IMAGE_NAME>
     ```
-    If running in Power Shell then the command should be: 
+    * Note: if running in Power Shell then the command should be: 
     ```
     docker run --rm -it -v <ABSOLUTE_PATH_TO_CONTAINER>:<PATH_ON_CONTAINER> <IMAGE_NAME>
     ``` 
     and the path should be formatted like `C:\Users\tiffany.timbers\Documents\project\:/home/project`.
+    
 * Copy the password that is given in the terminal.
 * Open a new web browser and go to `localhost:8787`.
 * Use `rstudio` as the username and the copied passcode from terminal as the password to sign in.
@@ -58,6 +59,7 @@ R-packages:
 * tidyverse 1.3.2
 * tidymodels 1.0.0
 * GGally 2.1.2
+* kknn 1.3.1
 * here 1.0.1
 * knitr 1.42
 * bookdown 0.33
